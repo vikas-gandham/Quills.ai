@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+// import HoverMenu from "../features/HoverMenu";
 
 function Menu() {
   return (
@@ -11,7 +12,10 @@ function Menu() {
           <Link to="/chatbot">Chatbot</Link>
         </li>
         <li>
-          <Link to="/solutions">Solutions</Link>
+          <Link to="/solutions">
+            {/* <HoverMenu /> */}
+            Solutions
+          </Link>
         </li>
         <li>
           <Link to="/contact">Contact us</Link>
