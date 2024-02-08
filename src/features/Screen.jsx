@@ -29,7 +29,7 @@ function Screen() {
             </Button>
             <Button to="/bookdemo" type="bgtrans">
               <div className="flex items-center justify-center gap-1">
-                <RiRecordCircleLine /> Book a Demo
+                <RiRecordCircleLine /> Book a Remo
               </div>
             </Button>
           </div>
