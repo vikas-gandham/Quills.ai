@@ -1,10 +1,10 @@
 function Companies() {
   return (
-    <div className="w-full space-y-8 space-x-16 lg:px-0 mx-auto overflow-hiden relative py-10">
+    <div className="w-full space-y-8  lg:px-0 mx-auto overflow-hiden relative py-10">
       <h1 className="text-[1.125rem] leading-[175%] fonmedium text-center">
         Trusted by exceptional companies around the world
       </h1>
-      <div className="flex items-center justify-center gap-4 overflow-hidden space-x-8">
+      <div className="flex items-center justify-center gap-4 overflow-hidden w-full lg:w-[80%] relative mx-auto">
         <div className="animate-loop-scroll flex items-center gap-4  grayscale space-x-8">
           <img src="/c1.png" alt="logo" className="max-w-none max-h-[60px]" />
 

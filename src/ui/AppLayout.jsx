@@ -1,6 +1,7 @@
 import Header from "./Header";
 import { Outlet, useNavigation } from "react-router-dom";
 import Loader from "./Loader";
+import Footer from "./Footer";
 
 function AppLayout() {
   const navigation = useNavigation();
@@ -16,6 +17,9 @@ function AppLayout() {
         <main>
           <Outlet />
         </main>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

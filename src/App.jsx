@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Features from "./pages/Features";
-import Chatbot from "./pages/Chatbot";
+import ChatbotCust from "./features/ChatbotCust";
 import Solutions from "./pages/Solutions";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
@@ -24,8 +24,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/chatbot",
-        element: <Chatbot />,
+        element: <ChatbotCust />,
       },
+
       {
         path: "/solutions",
         element: <Solutions />,
