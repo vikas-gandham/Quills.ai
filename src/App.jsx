@@ -7,8 +7,15 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import BookDemo from "./pages/BookDemo";
 import AppLayout from "./ui/AppLayout";
+import LifeSciences from "./pages/LifeSciences";
+import Bfsi from "./pages/Bfsi";
+import Ecommerce from "./pages/Ecommerce";
+import Logistics from "./pages/Logistics";
+import Healthcare from "./pages/Healthcare";
+import Hospitality from "./pages/Hospitality";
 
 import "./App.css";
+import Role from "./pages/Role";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +37,42 @@ const router = createBrowserRouter([
       {
         path: "/solutions",
         element: <Solutions />,
+        children: [
+          {
+            path: "industry",
+            element: <LifeSciences />,
+            children: [
+              {
+                path: "life-sciences",
+                element: <LifeSciences />,
+              },
+              {
+                path: "bfsi",
+                element: <Bfsi />,
+              },
+              {
+                path: "retail-ecommerce",
+                element: <Ecommerce />,
+              },
+              {
+                path: "manufacturing-logistics",
+                element: <Logistics />,
+              },
+              {
+                path: "healthcare-life-sciences",
+                element: <Healthcare />,
+              },
+              {
+                path: "hospitality",
+                element: <Hospitality />,
+              },
+            ],
+          },
+          {
+            path: "role",
+            element: <Role />,
+          },
+        ],
       },
       {
         path: "/contact",

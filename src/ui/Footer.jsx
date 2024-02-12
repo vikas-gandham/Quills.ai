@@ -2,6 +2,102 @@ import { Link } from "react-router-dom";
 import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 
 function Footer() {
+  const Items1 = [
+    "Life Sciences",
+    "BFSI",
+    "Retail & E-commerce",
+    "Manufacturing & Logistics",
+    "Healthcare & Life Sciences",
+  ];
+  const Items2 = [
+    {
+      name: "Business Leader",
+      pathname: "/solutions/role",
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "Data Leader",
+      pathname: "/solutions/role",
+
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: " Analyst",
+      pathname: "/solutions/role",
+
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "Product Leader",
+      pathname: "/solutions/role",
+
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "Developer",
+      pathname: "/solutions/role",
+
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "Marketing and Sales Leaders",
+      pathname: "/solutions/role",
+
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "Venture Capitalists",
+      pathname: "/solutions/role",
+
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "Operations",
+      pathname: "/solutions/role",
+
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "IT Infrastructure",
+      pathname: "/solutions/role",
+
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+  ];
+
+  const Items3 = [
+    {
+      name: "Features",
+      pathname: "/features",
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "Chatbot",
+      pathname: "/chatbot",
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "Terms and Conditions",
+      pathname: "/terms-conditions",
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "Privacy Policy",
+      pathname: "/privacy-policy",
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+  ];
+
+  const Industry = Items1.map((Item, index) => <li key={index}>{Items1}</li>);
+
+  const Role = Items2.map((Item, index) => <li key={index}>{Item.name}</li>);
+
+  const QuickLinks = Items3.forEach((Item, index) => (
+    <Link key={index} className={Item.classname} to={Item.pathname}>
+      {Item.name}
+    </Link>
+  ));
+
   return (
     <div className="bg-[#1f1f1f] flex flex-col justify-between text-white min-h-[400px] dark:text-white pt-[100px] pb-6 ">
       <div className=" w-[90%] mx-auto md:grid lg:grid-cols-6 md:grid-cols-4 grid-cols-1 gap-4">
@@ -11,12 +107,7 @@ function Footer() {
         <div className="w-full col-span-1 md:text-start text-center p-3 space-y-2 ">
           <h4 className="text-lg font-semibold">Quick Links</h4>
           <div className=" space-y-2 text-[16px] flex flex-col text-gray-200  leading-[20px] font-normal">
-            <Link
-              className=" hover:text-blue-500 cursor-pointer"
-              to="/features"
-            >
-              Features
-            </Link>
+            {QuickLinks}
             <Link className=" hover:text-blue-500 cursor-pointer" to="/chatbot">
               Chatbot
             </Link>
@@ -79,8 +170,9 @@ function Footer() {
                   className=" hover:text-blue-500 cursor-pointer"
                   to="/solutions/role"
                 >
-                  Bussiness Leader
+                  {Role}
                 </Link>
+
                 <Link
                   className=" hover:text-blue-500 cursor-pointer"
                   to="/solutions/role"
@@ -143,8 +235,8 @@ function Footer() {
         <div className=" col-span-1 p-3 space-y-2 w-full md:text-start text-center">
           <h4 className="text-lg font-semibold capitalize  ">Social Media</h4>
           <div className="flex items-center md:justify-start justify-center gap-2">
-            <FaXTwitter />
-            <FaLinkedinIn />
+            <FaXTwitter size="2rem" />
+            <FaLinkedinIn size="2rem" />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-function Solutions() {
+function Industry() {
   return <Outlet />;
 }
-export default Solutions;
+export default Industry;
