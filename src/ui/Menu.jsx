@@ -12,14 +12,14 @@ function Menu() {
     setIsHovering(false);
   };
 
-  const Items1 = [
+  const items1 = [
     "Life Sciences",
     "BFSI",
     "Retail & E-commerce",
     "Manufacturing & Logistics",
     "Healthcare & Life Sciences",
   ];
-  const Items2 = [
+  const items2 = [
     "Business Leader",
     "Data Leader",
     " Analyst",
@@ -31,19 +31,19 @@ function Menu() {
     "IT Infrastructure",
   ];
 
-  const Industry = Items1.map((Items1, index) => <li key={index}>{Items1}</li>);
-  const Role = Items2.map((Items2, index) => <li key={index}>{Items2}</li>);
+  const industry = items1.map((item, index) => <li key={index}>{items1}</li>);
+  const role = items2.map((item, index) => <li key={index}>{items2}</li>);
 
-  const HoverText = () => {
+  const hoverText = () => {
     return (
       <div className=" p-4 border rounded-md bg-white shadow-md grid grid-cols-3 gap-10 col-span-3  absolute translate-x-[50%] top-10 min-w-[max-content] shadow-sky-100  translate-y-8  ">
         <div>
           <h1>By Industry</h1>
-          <ul>{Industry}</ul>
+          <ul>{industry}</ul>
         </div>
         <div>
           <h1>By Role</h1>
-          <ul>{Role}</ul>
+          <ul>{role}</ul>
         </div>
       </div>
     );
@@ -51,7 +51,7 @@ function Menu() {
 
   return (
     <div className="text-base-8">
-      {isHovering && <HoverText />}
+      {isHovering && hoverText}
       <ul className="lg:flex items-center justify-between gap-6">
         <li>
           <Link to="/features">Features</Link>

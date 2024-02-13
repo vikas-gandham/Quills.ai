@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 
 function Footer() {
-  const Items1 = [
+  const items1 = [
     "Life Sciences",
     "BFSI",
     "Retail & E-commerce",
     "Manufacturing & Logistics",
     "Healthcare & Life Sciences",
   ];
-  const Items2 = [
+  const items2 = [
     {
       name: "Business Leader",
       pathname: "/solutions/role",
@@ -65,7 +65,7 @@ function Footer() {
     },
   ];
 
-  const Items3 = [
+  const items3 = [
     {
       name: "Features",
       pathname: "/features",
@@ -88,13 +88,13 @@ function Footer() {
     },
   ];
 
-  const Industry = Items1.map((Item, index) => <li key={index}>{Items1}</li>);
+  const industry = items1.map((item, index) => <li key={index}>{items1}</li>);
 
-  const Role = Items2.map((Item, index) => <li key={index}>{Item.name}</li>);
+  const role = items2.map((item, index) => <li key={index}>{item.name}</li>);
 
-  const QuickLinks = Items3.forEach((Item, index) => (
-    <Link key={index} className={Item.classname} to={Item.pathname}>
-      {Item.name}
+  const quickLinks = items3.map((item, index) => (
+    <Link key={index} className={item.classname} to={item.pathname}>
+      {item.name}
     </Link>
   ));
 
@@ -107,7 +107,6 @@ function Footer() {
         <div className="w-full col-span-1 md:text-start text-center p-3 space-y-2 ">
           <h4 className="text-lg font-semibold">Quick Links</h4>
           <div className=" space-y-2 text-[16px] flex flex-col text-gray-200  leading-[20px] font-normal">
-            {QuickLinks}
             <Link className=" hover:text-blue-500 cursor-pointer" to="/chatbot">
               Chatbot
             </Link>
@@ -170,7 +169,7 @@ function Footer() {
                   className=" hover:text-blue-500 cursor-pointer"
                   to="/solutions/role"
                 >
-                  {Role}
+                  {role}
                 </Link>
 
                 <Link
