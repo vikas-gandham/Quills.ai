@@ -2,14 +2,35 @@ import { Link } from "react-router-dom";
 import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 
 function Footer() {
-  const items1 = [
-    "Life Sciences",
-    "BFSI",
-    "Retail & E-commerce",
-    "Manufacturing & Logistics",
-    "Healthcare & Life Sciences",
+  const industryList = [
+    {
+      name: "Life Sciences",
+      pathname: "/solutions/industry/life-sciences",
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "BFSI",
+      pathname: "/solutions/industry/bfsi",
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "Retail & E-commerce",
+      pathname: "/solutions/industry/retail-ecommerce",
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "Manufacturing & Logistics",
+      pathname: "/solutions/industry/manufacturing-logistics",
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
+    {
+      name: "Healthcare & Life Sciences",
+      pathname: "/solutions/industry/healthcare-life-sciences",
+      classname: " hover:text-blue-500 cursor-pointer",
+    },
   ];
-  const items2 = [
+
+  const roleList = [
     {
       name: "Business Leader",
       pathname: "/solutions/role",
@@ -18,54 +39,46 @@ function Footer() {
     {
       name: "Data Leader",
       pathname: "/solutions/role",
-
       classname: " hover:text-blue-500 cursor-pointer",
     },
     {
       name: " Analyst",
       pathname: "/solutions/role",
-
       classname: " hover:text-blue-500 cursor-pointer",
     },
     {
       name: "Product Leader",
       pathname: "/solutions/role",
-
       classname: " hover:text-blue-500 cursor-pointer",
     },
     {
       name: "Developer",
       pathname: "/solutions/role",
-
       classname: " hover:text-blue-500 cursor-pointer",
     },
     {
       name: "Marketing and Sales Leaders",
       pathname: "/solutions/role",
-
       classname: " hover:text-blue-500 cursor-pointer",
     },
     {
       name: "Venture Capitalists",
       pathname: "/solutions/role",
-
       classname: " hover:text-blue-500 cursor-pointer",
     },
     {
       name: "Operations",
       pathname: "/solutions/role",
-
       classname: " hover:text-blue-500 cursor-pointer",
     },
     {
       name: "IT Infrastructure",
       pathname: "/solutions/role",
-
       classname: " hover:text-blue-500 cursor-pointer",
     },
   ];
 
-  const items3 = [
+  const quickLinksList = [
     {
       name: "Features",
       pathname: "/features",
@@ -88,11 +101,19 @@ function Footer() {
     },
   ];
 
-  const industry = items1.map((item, index) => <li key={index}>{items1}</li>);
+  const industry = industryList.map((item, index) => (
+    <Link key={index} className={item.classname} to={item.pathname}>
+      {item.name}
+    </Link>
+  ));
 
-  const role = items2.map((item, index) => <li key={index}>{item.name}</li>);
+  const role = roleList.map((item, index) => (
+    <Link key={index} className={item.classname} to={item.pathname}>
+      {item.name}
+    </Link>
+  ));
 
-  const quickLinks = items3.map((item, index) => (
+  const quickLinks = quickLinksList.map((item, index) => (
     <Link key={index} className={item.classname} to={item.pathname}>
       {item.name}
     </Link>
@@ -107,21 +128,7 @@ function Footer() {
         <div className="w-full col-span-1 md:text-start text-center p-3 space-y-2 ">
           <h4 className="text-lg font-semibold">Quick Links</h4>
           <div className=" space-y-2 text-[16px] flex flex-col text-gray-200  leading-[20px] font-normal">
-            <Link className=" hover:text-blue-500 cursor-pointer" to="/chatbot">
-              Chatbot
-            </Link>
-            <Link
-              className=" hover:text-blue-500 cursor-pointer"
-              to="/terms-conditions"
-            >
-              Terms and Conditions
-            </Link>
-            <Link
-              className=" hover:text-blue-500 cursor-pointer"
-              to="/privacy-policy"
-            >
-              Privacy Policy
-            </Link>
+            {quickLinks}
           </div>
         </div>
         <div className=" col-span-1 p-3 space-y-2 md:text-start text-center">
@@ -129,98 +136,11 @@ function Footer() {
           <div className=" w-full flex flex-col gap-6 ">
             <div className=" space-y-2">
               <h1 className=" text-blue-300">By Industry</h1>
-              <div className=" space-y-2 flex flex-col">
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/industry/life-sciences"
-                >
-                  Life Sciences
-                </Link>
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/industry/bfsi"
-                >
-                  BFSI
-                </Link>
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/industry/retail-ecommerce"
-                >
-                  Retail & E-commerce
-                </Link>
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/industry/manufacturing-logistics"
-                >
-                  Manufacturing & Logistics
-                </Link>
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/industry/healthcare-life-sciences"
-                >
-                  Healthcare & Life Sciences
-                </Link>
-              </div>
+              <div className=" space-y-2 flex flex-col">{industry}</div>
             </div>
             <div className=" space-y-2">
               <h1 className=" text-blue-300">By Role</h1>
-              <div className=" space-y-2 flex flex-col">
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/role"
-                >
-                  {role}
-                </Link>
-
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/role"
-                >
-                  Data Leader
-                </Link>
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/role"
-                >
-                  Analyst
-                </Link>
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/role"
-                >
-                  Product Leader
-                </Link>
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/role"
-                >
-                  Developer
-                </Link>
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/role"
-                >
-                  Markrting and Sales Leader
-                </Link>
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/role"
-                >
-                  Venture Capitalists
-                </Link>
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/role"
-                >
-                  Operations
-                </Link>
-                <Link
-                  className=" hover:text-blue-500 cursor-pointer"
-                  to="/solutions/role"
-                >
-                  IT Infrastructure
-                </Link>
-              </div>
+              <div className=" space-y-2 flex flex-col">{role}</div>
             </div>
           </div>
         </div>

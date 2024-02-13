@@ -4,16 +4,16 @@ function DemoButton() {
   const [anchorColor, setAnchorColor] = useState(
     "border px-2 py-2 w-[max-content] rounded-lg bg-slate-700 "
   );
-  const [isHovering, setIsHovering] = useState(false);
+  // const [isHovering, setIsHovering] = useState(false);
   const handleMouseOver = () => {
     setAnchorColor("border px-2 py-2 w-[max-content] rounded-lg bg-indigo-500");
-    setIsHovering(true);
+    // setIsHovering(true);
   };
   const handleMouseOut = () => {
     setAnchorColor(
       "border px-2 py-2 w-[max-content] rounded-lg bg-slate-700  "
     );
-    setIsHovering(false);
+    // setIsHovering(false);
   };
 
   return (

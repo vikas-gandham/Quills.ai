@@ -6,6 +6,35 @@ import { TiArrowForward } from "react-icons/ti";
 import { IconContext } from "react-icons";
 
 function ChatbotCust() {
+  const uiCustmization = [
+    { "Logo URL": "https://static.quills.ai/quills.png" },
+    { "Logo Rounded": " " },
+    { "Chat Heading Position": {"Logo on Side", "Logo at Start", "Text at Start"} },
+    { "Bot Title": "Quills.ai" },
+    { "Bot Subtitle": " Chat with us" },
+    { "Header Background Color": " " },
+    { "Header Text Color": " " },
+    { "Subheader Text Color": " " },
+    { "Subheader Background Color": " " },
+    { "Chat Window Background Color": " " },
+    {
+      "Chat Window Background Image Link":
+        " ",
+    },
+    { "Chat Window Border Color": " " },
+    { "Bot Default Message": "👋 Hi Iam Quills bot. How can I help you?" },
+    { "Bot Message Background Color": " " },
+    { "Bot Message Text Color": " " },
+    { "User Message Background Color": " " },
+    { "User Message Text Color": " " },
+    { "Send Bar Background Color": " " },
+    { "Input Placeholder Text": " " },
+    { "Input Background Color": " " },
+    { "Input Text Color": " " },
+    { "Send Button Icon": " " },
+    { "Send Icon Color": " " },
+  ];
+
   return (
     <div
       id="chat"

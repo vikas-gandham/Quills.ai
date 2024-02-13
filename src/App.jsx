@@ -8,7 +8,6 @@ import Login from "./pages/Login";
 import BookDemo from "./pages/BookDemo";
 import AppLayout from "./ui/AppLayout";
 import LifeSciences from "./pages/LifeSciences";
-import Bfsi from "./pages/Bfsi";
 import Ecommerce from "./pages/Ecommerce";
 import Logistics from "./pages/Logistics";
 import Healthcare from "./pages/Healthcare";
@@ -16,6 +15,9 @@ import Hospitality from "./pages/Hospitality";
 
 import "./App.css";
 import Role from "./pages/Role";
+import Bfsi from "./pages/BFSI";
+import TermsConditions from "./pages/TermsConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const router = createBrowserRouter([
   {
@@ -85,6 +87,14 @@ const router = createBrowserRouter([
       {
         path: "/bookdemo",
         element: <BookDemo />,
+      },
+      {
+        path: "/terms-conditions",
+        element: <TermsConditions />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
       },
     ],
   },

@@ -1,9 +1,11 @@
-import Logo from "./Logo";
-import Menu from "./Menu";
+import { Link } from "react-router-dom";
+import { IoIosArrowDown } from "react-icons/io";
 import Button from "./Button";
 import { useState, useEffect } from "react";
+import HoverText from "../features/HoverText";
 
 function Header() {
+  const [isHovering, setIsHovering] = useState(false);
   const [top, setTop] = useState(true);
 
   useEffect(() => {
@@ -14,15 +16,54 @@ function Header() {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
 
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+
   return (
     <header
+      onMouseOut={handleMouseOut}
       className={`w-full fixed mx-auto top-0 right-0 left-0 z-20 pt-[5px] ${
         !top && `border-[#eaeaea] border-b bg-white shadow-md`
       }`}
     >
       <div className="md:max-w-[80%] max-w-[95%] flex items-center justify-between dark:text-black mx-auto py-3">
-        <Logo />
-        <Menu />
+        <Link to="/" className="h-[34px]">
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="h-[34px] flex items-center justify-center gap-1"
+          />
+        </Link>
+
+        <div className="text-base-8">
+          {isHovering && <HoverText />}
+          <ul className="lg:flex items-center justify-between gap-6">
+            <li>
+              <Link to="/features">Features</Link>
+            </li>
+            <li>
+              <Link to="/chatbot">Chatbot</Link>
+            </li>
+
+            <li
+              onMouseOver={handleMouseOver}
+              className="flex items-center justify-center gap-1"
+            >
+              Solutions
+              <IoIosArrowDown />
+            </li>
+
+            <li>
+              <Link to="/contact">Contact us</Link>
+            </li>
+          </ul>
+        </div>
+
         <div className="flex items-center justify-between gap-2">
           <Button to="/login" type="bgnone">
             Log in
