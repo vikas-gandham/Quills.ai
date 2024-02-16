@@ -6,34 +6,33 @@ import { TiArrowForward } from "react-icons/ti";
 import { IconContext } from "react-icons";
 
 function ChatbotCust() {
-  // const uiCustmization = [
-  //   { Logo URL: "https://static.quills.ai/quills.png" },
-  //   { "Logo Rounded": " " },
-  //   { "Chat Heading Position": {"Logo on Side", "Logo at Start", "Text at Start"} },
-  //   { "Bot Title": "Quills.ai" },
-  //   { "Bot Subtitle": " Chat with us" },
-  //   { "Header Background Color": "#111827 " },
-  //   { "Header Text Color": " #ffffff" },
-  //   { "Subheader Text Color": "#282828 " },
-  //   { "Subheader Background Color": "#282828 " },
-  //   { "Chat Window Background Color": "#f1f1f1   " },
-  //   {
-  //     "Chat Window Background Image Link":
-  //       " ",
-  //   },
-  //   { "Chat Window Border Color": "#282828 " },
-  //   { "Bot Default Message": "👋 Hi Iam Quills bot. How can I help you?" },
-  //   { "Bot Message Background Color": "#282828 " },
-  //   { "Bot Message Text Color": " #282828" },
-  //   { "User Message Background Color": "v " },
-  //   { "User Message Text Color": " #282828" },
-  //   { "Send Bar Background Color": "#282828 " },
-  //   { "Input Placeholder Text": " " },
-  //   { "Input Background Color": "#282828" },
-  //   { "Input Text Color": "#282828 " },
-  //   { "Send Button Icon": " " },
-  //   { "Send Icon Color": " #282828" },
-  // ];
+  // const uiCustmization =
+  // { logoURL: "https://static.quills.ai/quills.png" ,
+  //  logoRounded: " " ,
+  //  chatHeadingPosition: {"Logo on Side", "Logo at Start", "Text at Start"} ,
+  //  botTitle: "Quills.ai" ,
+  //  botSubtitle: " Chat with us" ,
+  // headerBackgroundColor: "#111827 " ,
+  //  headerTextColor: " #ffffff" ,
+  //  subheaderTextColor: "#282828 " ,
+  //  subheaderBackgroundColor: "#282828 " ,
+  //  chatWindowBackgroundColor: "#f1f1f1   " ,
+
+  //   chatWindowBackgroundImageLink:
+  //     " ",
+  // ,
+  //  chatWindowBorderColor: "#282828 " ,
+  //  botDefaultMessage: "👋 Hi Iam Quills bot. How can I help you?" ,
+  //  botMessageBackgroundColor: "#282828 " ,
+  //  botMessageTextColor: " #282828" ,
+  //  userMessageBackgroundColor: "v " ,
+  //  userMessageTextColor: " #282828" ,
+  //  sendBarBackgroundColor: "#282828 " ,
+  //  inputPlaceholderText: " " ,
+  //  inputBackgroundColor: "#282828" ,
+  // inputTextColor: "#282828 " ,
+  // sendButtonIcon: " " ,
+  // sendIconColor: " #282828" }
 
   return (
     <div
