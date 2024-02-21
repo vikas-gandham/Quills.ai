@@ -20,6 +20,7 @@ import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const router = createBrowserRouter([
+  { path: "/login", element: <Login /> },
   {
     element: <AppLayout />,
     children: [

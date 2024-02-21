@@ -24,9 +24,13 @@ function Header() {
     setIsHovering(false);
   };
 
+  const handleLoginClick = () => {
+    window.open("/login", "_blank");
+  };
+
   return (
     <header
-      onMouseOut={handleMouseOut}
+      onMouseLeave={handleMouseOut}
       className={`w-full fixed mx-auto top-0 right-0 left-0 z-20 pt-[5px] ${
         !top && `border-[#eaeaea] border-b bg-white shadow-md`
       }`}
@@ -65,12 +69,15 @@ function Header() {
         </div>
 
         <div className="flex items-center justify-between gap-2">
-          <Button to="/login" type="bgnone">
+          <Button to="/login" type="bgnone" onclick="">
             Log in
           </Button>
-          <Button to="/login" type="secondary">
+          <button
+            className="px-5 py-2.5 inline-block text-sm bg-none outline-blue-500 font-semibold text-blue-500 transition-colors duration-300 focus:outline-none hover:text-black rounded-lg border-b-2 border border-blue-400 text-[14px]"
+            onClick={handleLoginClick}
+          >
             Sign up
-          </Button>
+          </button>
           <Button to="/bookdemo" type="primary">
             Book a Demo
           </Button>
