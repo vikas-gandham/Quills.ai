@@ -16,7 +16,7 @@ function Screen() {
           <h1 className="text-[#131316] md:text-[64px] font-[500] text-[36px] leading-[110%] pt-[10px]">
             AI-Driven
             <span className="bg-gradient-to-br from-blue-700 to-blue-300 bg-clip-text text-transparent">
-              Chatbot
+              &nbsp;Chatbot&nbsp;
             </span>
             with Instant SQL Query Generation
           </h1>
