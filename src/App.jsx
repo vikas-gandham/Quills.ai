@@ -1,6 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
-import Features from "./pages/Features";
 import ChatbotCust from "./features/ChatbotCust";
 import Solutions from "./pages/Solutions";
 import Contact from "./pages/Contact";
@@ -18,6 +17,7 @@ import Role from "./pages/Role";
 import Bfsi from "./pages/BFSI";
 import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Industry from "./pages/Industry";
 
 const router = createBrowserRouter([
   { path: "/login", element: <Login /> },
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/features",
-        element: <Features />,
+        element: <Home />,
       },
       {
         path: "/chatbot",
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: "industry",
-            element: <LifeSciences />,
+            element: <Industry />,
             children: [
               {
                 path: "life-sciences",
