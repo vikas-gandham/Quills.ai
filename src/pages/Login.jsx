@@ -1,8 +1,14 @@
 import { FaLinkedin } from "react-icons/fa";
 import ShowHidePassword from "../features/ShoeHidePassword";
 import { useState } from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function Login() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   const [action, setAction] = useState("signIn");
   const signIn = () => {
     setAction("signIn");

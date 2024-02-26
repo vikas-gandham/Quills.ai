@@ -1,7 +1,13 @@
 import DemoButton from "../features/DemoButton";
 import Testimonials from "../features/Testimonials";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function LifeSciences() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <div>
       <div className=" w-full lg:min-h-[80vh] lg:py-0  bg-white flex items-center justify-start md:text-start text-center relative">

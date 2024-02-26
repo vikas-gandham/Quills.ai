@@ -18,6 +18,7 @@ import Bfsi from "./pages/BFSI";
 import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Industry from "./pages/Industry";
+import ScrollToTop from "./features/ScrollToTop";
 
 const router = createBrowserRouter([
   { path: "/login", element: <Login /> },
@@ -102,7 +103,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <div>
+      {/* <ScrollToTop /> */}
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;

@@ -1,4 +1,11 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 function PrivacyPolicy() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   const anchorList = [
     { name: "Information We Collect", id: "#1" },
     { name: "How We Use and Share Information", id: "#2" },
