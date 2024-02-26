@@ -11,12 +11,12 @@ function Login() {
     setAction("createAccount");
   };
   return (
-    <div className="mx-[35%] p-20 flex flex-col justify-center item-center">
+    <div className="mx-[33%] mt-0 pb-40 pt-0 px-20 flex flex-col justify-center item-center">
       <div className="flex justify-center">
         <img
           src="/quills5.png"
           alt="logo"
-          className="w-[150px] h-[150px] p-8"
+          className="w-[180px] h-[180px] p-8"
         />
       </div>
       <div className="border shadow-md p-8 space-y-8">
@@ -61,13 +61,16 @@ function Login() {
 
         <div className=" flex flex-col gap-4 ">
           <h1>Email</h1>
-          <input className="border border-slate-400 rounded-sm p-2 focus:outline-none focus:border-[#008b8b]" />
+          <input
+            className="border border-slate-400 rounded-sm p-2 focus:outline-none focus:border-[#008b8b]"
+            placeholder="Enter your Email"
+          />
           {action === "signIn" ? (
             <div className=" flex flex-col gap-4 ">
               <h1>Password</h1>
 
               <ShowHidePassword />
-              <button className="border p-2 text-white bg-[#008b8b]">
+              <button className="border p-2 text-white bg-[#008b8b]  focus:outline-none focus:border-[#008b8b]">
                 Sign In
               </button>
             </div>
@@ -77,15 +80,18 @@ function Login() {
               <ShowHidePassword />
               <h1>Confirm Password</h1>
               <ShowHidePassword />
-              <button className="border p-2 text-white bg-[#008b8b]">
+              <button className="border p-2 text-white bg-[#008b8b]  focus:outline-none focus:border-[#008b8b]">
                 Create Account
               </button>
             </div>
           )}
 
-          <h1 className="text-center pt-[10px]">Reset your password</h1>
+          <h1 className="text-center pt-[10px] text-[#008b8b]">
+            Reset your password
+          </h1>
         </div>
       </div>
+      <h1 className="text-center pt-[20px]">© All Rights Reserved</h1>
     </div>
   );
 }

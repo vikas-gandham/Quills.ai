@@ -12,7 +12,8 @@ function ShowHidePassword() {
     <div className="flex items-center justify-between ">
       <input
         type={!isVisible ? "password" : "text"}
-        className="border border-slate-400 rounded-sm p-2 grow"
+        className="border border-slate-400 rounded-sm p-2 grow  focus:outline-none focus:border-[#008b8b] "
+        placeholder="Enter your Password"
       />
       <span
         className="border border-slate-400 rounded-sm px-4 py-3 hover:border-[#008b8b] cursor-pointer"

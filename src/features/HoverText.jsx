@@ -126,16 +126,16 @@ function HoverText() {
   ));
 
   return (
-    <div className=" p-8 border rounded-md bg-white shadow-md grid grid-cols-3 gap-20 col-span-3  absolute -translate-x-[50%] top-10 min-w-[max-content] shadow-sky-100  translate-y-8  ">
+    <div className=" p-8 border rounded-md bg-white shadow-md grid grid-cols-3 gap-20 col-span-3  absolute -translate-x-[30%] top-10 min-w-[max-content] shadow-sky-100  translate-y-6  ">
       <div className=" space-y-8">
         <h1 className="font-semibold text-lg">By Industry</h1>
-        <div className=" space-y-3 flex flex-col gap-4 cursor-pointer">
+        <div className=" space-y-3 flex flex-col gap-1 cursor-pointer">
           {industry}
         </div>
       </div>
       <div className=" space-y-8">
         <h1 className="font-semibold text-lg">By Role</h1>
-        <div className=" space-y-3 flex flex-col gap-4 cursor-pointer">
+        <div className=" space-y-3 flex flex-col gap-1 cursor-pointer">
           {role}
         </div>
       </div>
