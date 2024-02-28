@@ -1,11 +1,16 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-
+import { useRef } from "react";
 function PrivacyPolicy() {
-  const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  });
+
+  const ref = useRef(null);
+
+  const handleClick = () => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const anchorList = [
     { name: "Information We Collect", id: "#1" },
     { name: "How We Use and Share Information", id: "#2" },
@@ -52,7 +57,9 @@ function PrivacyPolicy() {
               {anchorList.map((item, index) => (
                 <a
                   key={index}
-                  href={item.id}
+                  // href={item.id}
+                  ref={ref}
+                  onClick={handleClick}
                   className=" list-item text-[#112448]  font-medium text-[14px] leading-[20px] cursor-pointer scroll-py-6 "
                 >
                   {item.name}
@@ -160,7 +167,7 @@ function PrivacyPolicy() {
                   vendors use your Personal Information only at our direction
                   and in accordance with our Privacy Policy.
                 </p>
-                <p clasName=" md:text-[16px] text-[14px] font-light text-[#112448] leading-[175%] text-justify">
+                <p className=" md:text-[16px] text-[14px] font-light text-[#112448] leading-[175%] text-justify">
                   In general, the Personal Information you provide to us is used
                   to help us communicate with you. For example, we use Personal
                   Information to contact users in response to questions, solicit

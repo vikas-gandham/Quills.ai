@@ -1,3 +1,5 @@
+// import Accordion from "./Accordion";
+
 function VisualData() {
   const itemList = [
     {
@@ -146,7 +148,24 @@ function VisualData() {
                       </h1>
                     </div>
                   </div>
-                  <div className=" flex flex-col mt-[100px] lg:w-[70%] w-full mx-auto gap-4 "></div>
+                  <div className=" flex flex-col mt-[100px] lg:w-[70%] w-full mx-auto gap-4 ">
+                    {/* <Accordion
+                      title="What is Quills.ai?"
+                      answer="Quills.ai is an advanced chatbot designed to assist with data queries, database integration, and CSV file handling. It streamlines data-related tasks and provides valuable insights."
+                    />
+                    <Accordion
+                      title="How can I get started with Quills.ai?"
+                      answer="Getting started with Quills.ai is easy! Simply sign up for an account, choose a pricing plan, and start using our chatbot to simplify your data workflows."
+                    />
+                    <Accordion
+                      title="Is Quills.ai compatible with my data storage systems?"
+                      answer="Yes, Quills.ai seamlessly integrates with various databases, including SQL, NoSQL, and cloud-based storage. It's designed to work with a wide range of data systems."
+                    />
+                    <Accordion
+                      title="What kind of support do you offer?"
+                      answer="We offer email support to all users, and our Pro and Enterprise plans include priority support. Our dedicated support team is here to assist you with any questions or issues."
+                    /> */}
+                  </div>
                 </div>
               </div>
             </div>
