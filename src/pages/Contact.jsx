@@ -3,7 +3,7 @@ import { useEffect } from "react";
 function Contact() {
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
 
   const cardList = [
     {

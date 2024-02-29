@@ -5,7 +5,7 @@ import { useEffect } from "react";
 function Industry() {
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
   return (
     <div>
       <header>

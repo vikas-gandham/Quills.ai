@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import Button from "./Button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import HoverText from "../features/HoverText";
 
 function Header() {
@@ -27,6 +27,16 @@ function Header() {
   const handleLoginClick = () => {
     window.open("/login", "_blank");
   };
+  const handleLogoClick = () => {
+    window.scrollTo(0, 0);
+  };
+  const ref = useRef(null);
+  const handleClick = () => {
+    window.scrollTo({
+      top: ref.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <header
@@ -36,7 +46,7 @@ function Header() {
       }`}
     >
       <div className="md:max-w-[80%] max-w-[95%] flex items-center justify-between dark:text-black mx-auto py-3">
-        <Link to="/" className="h-[34px]">
+        <Link to="/" onClick={handleLogoClick} className="h-[34px]">
           <img
             src="/logo.png"
             alt="Logo"
@@ -48,10 +58,14 @@ function Header() {
           {isHovering && <HoverText />}
           <ul className="lg:flex items-center justify-between gap-6">
             <li>
-              <Link to="/features">Features</Link>
+              <Link onClick={handleLogoClick} to="/features">
+                Features
+              </Link>
             </li>
             <li>
-              <Link to="/chatbot">Chatbot</Link>
+              <Link onClick={handleClick} to="/chatbot">
+                Chatbot
+              </Link>
             </li>
 
             <li

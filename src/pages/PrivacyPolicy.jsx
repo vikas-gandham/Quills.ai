@@ -3,26 +3,35 @@ import { useRef } from "react";
 function PrivacyPolicy() {
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
 
-  const ref = useRef(null);
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  const ref4 = useRef(null);
+  const ref5 = useRef(null);
+  const ref6 = useRef(null);
+  const ref7 = useRef(null);
 
-  const handleClick = () => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
+  const handleClick = (anchorRef) => {
+    window.scrollTo({
+      top: anchorRef.current.offsetTop,
+      behavior: "smooth",
+    });
   };
 
-  const anchorList = [
-    { name: "Information We Collect", id: "#1" },
-    { name: "How We Use and Share Information", id: "#2" },
-    { name: "How We Protect Information", id: "#3" },
-    {
-      name: "Your Rights Regarding the Use of Your Personal Information",
-      id: "#4",
-    },
-    { name: "Links to Other Websites", id: "#5" },
-    { name: "Changes to Our Privacy Policy", id: "#6" },
-    { name: "Contact Us", id: "#7" },
-  ];
+  // const anchorList = [
+  //   { name: "Information We Collect", ref: { ref1 } },
+  //   { name: "How We Use and Share Information", ref: { ref2 } },
+  //   { name: "How We Protect Information", ref: { ref3 } },
+  //   {
+  //     name: "Your Rights Regarding the Use of Your Personal Information",
+  //     ref: { ref4 },
+  //   },
+  //   { name: "Links to Other Websites", ref: { ref5 } },
+  //   { name: "Changes to Our Privacy Policy", ref: { ref6 } },
+  //   { name: "Contact Us", ref: { ref7 } },
+  // ];
   return (
     <div className=" w-full py-[120px] bg-white dark:text-black ">
       <div className=" lg:w-[80%] mx-auto px-6 lg:px-0  ">
@@ -44,29 +53,63 @@ function PrivacyPolicy() {
               “we,” “us,” and “our” refer to the Company. “You” refers to you,
               as a user of our Site or our Service. By accessing our Site or our
               Service, you accept our Privacy Policy and Terms of Use (found
-              here:"
+              here:&quot;
               <a href="#" className="text-blue-500 underline">
                 https://www.quills.ai/terms-conditions
               </a>
-              "), and you consent to our collection, storage, use and disclosure
-              of your Personal Information as described in this Privacy Policy.
+              &quot;), and you consent to our collection, storage, use and
+              disclosure of your Personal Information as described in this
+              Privacy Policy.
             </p>
           </div>
           <div className=" w-full grid md:grid-cols-6 grid-cols-1 relative">
             <div className=" md:col-span-2 col-span-1 md:block hidden pl-4 list-disc space-y-4 sticky top-[100px] h-[max-content]">
-              {anchorList.map((item, index) => (
-                <a
-                  key={index}
-                  // href={item.id}
-                  ref={ref}
-                  onClick={handleClick}
+              <ul className="flex flex-col gap-5">
+                <li
+                  onClick={() => handleClick(ref1)}
                   className=" list-item text-[#112448]  font-medium text-[14px] leading-[20px] cursor-pointer scroll-py-6 "
                 >
-                  {item.name}
-                </a>
-              ))}
+                  Information We Collect
+                </li>
+                <li
+                  onClick={() => handleClick(ref2)}
+                  className=" list-item text-[#112448]  font-medium text-[14px] leading-[20px] cursor-pointer scroll-py-6 "
+                >
+                  How We Use and Share Information
+                </li>
+                <li
+                  onClick={() => handleClick(ref3)}
+                  className=" list-item text-[#112448]  font-medium text-[14px] leading-[20px] cursor-pointer scroll-py-6 "
+                >
+                  How We Protect Information
+                </li>
+                <li
+                  onClick={() => handleClick(ref4)}
+                  className=" list-item text-[#112448]  font-medium text-[14px] leading-[20px] cursor-pointer scroll-py-6 "
+                >
+                  Your Rights Regarding the Use of Your Personal Information
+                </li>
+                <li
+                  onClick={() => handleClick(re51)}
+                  className=" list-item text-[#112448]  font-medium text-[14px] leading-[20px] cursor-pointer scroll-py-6 "
+                >
+                  Links to Other Websites
+                </li>
+                <li
+                  onClick={() => handleClick(ref6)}
+                  className=" list-item text-[#112448]  font-medium text-[14px] leading-[20px] cursor-pointer scroll-py-6 "
+                >
+                  Changes to Our Privacy Policy
+                </li>
+                <li
+                  onClick={() => handleClick(ref7)}
+                  className=" list-item text-[#112448]  font-medium text-[14px] leading-[20px] cursor-pointer scroll-py-6 "
+                >
+                  Contact Us
+                </li>
+              </ul>
             </div>
-            <div id="1" className=" md:col-span-4  col-span-1 space-y-8 ">
+            <div ref={ref1} className=" md:col-span-4  col-span-1 space-y-8 ">
               <div className=" space-y-6">
                 <h1 className=" font-medium text-[20px] leading-[20px]">
                   I. INFORMATION WE COLLECT
@@ -151,7 +194,7 @@ function PrivacyPolicy() {
                   </li>
                 </ul>
               </div>
-              <div id="2" className=" space-y-6">
+              <div ref={ref2} className=" space-y-6">
                 <h1 className=" font-medium text-[20px] leading-[20px]">
                   II. HOW WE USE AND SHARE INFORMATION
                 </h1>
@@ -211,7 +254,28 @@ function PrivacyPolicy() {
                   your information is used.
                 </p>
               </div>
-              <div id="4" className=" space-y-6">
+              <div ref={ref3} className=" space-y-6">
+                <h1 className=" font-medium text-[20px] leading-[20px]">
+                  III. HOW WE PROTECT INFORMATION
+                </h1>
+                <p className=" md:text-[16px] text-[14px] font-light text-[#112448] leading-[175%] text-justify">
+                  We implement security measures designed to protect your
+                  information from unauthorized access. Your account is
+                  protected by your account password and we urge you to take
+                  steps to keep your personal information safe by not disclosing
+                  your password and by logging out of your account after each
+                  use. We further protect your information from potential
+                  security breaches by implementing certain technological
+                  security measures including encryption, firewalls, and secure
+                  socket layer technology. However, these measures do not
+                  guarantee that your information will not be accessed,
+                  disclosed, altered, or destroyed by a breach of such firewalls
+                  and secure server software. By using our Service, you
+                  acknowledge that you understand and agree to assume these
+                  risks.
+                </p>
+              </div>
+              <div ref={ref4} className=" space-y-6">
                 <h1 className=" font-medium text-[20px] leading-[20px]">
                   IV. YOUR RIGHTS REGARDING THE USE OF YOUR PERSONAL INFORMATION
                 </h1>
@@ -227,7 +291,7 @@ function PrivacyPolicy() {
                   to our Privacy Policy.
                 </p>
               </div>
-              <div id="5" className=" space-y-6">
+              <div ref={ref5} className=" space-y-6">
                 <h1 className=" font-medium text-[20px] leading-[20px]">
                   V. LINKS TO OTHER WEBSITES
                 </h1>
@@ -248,7 +312,7 @@ function PrivacyPolicy() {
                   proceeding to use them.
                 </p>
               </div>
-              <div id="6" className=" space-y-6">
+              <div ref={ref6} className=" space-y-6">
                 <h1 className=" font-medium text-[20px] leading-[20px]">
                   VI. CHANGES TO OUR PRIVACY POLICY
                 </h1>
@@ -264,7 +328,7 @@ function PrivacyPolicy() {
                   privacy page for updates.
                 </p>
               </div>
-              <div id="7" className=" space-y-6">
+              <div ref={ref7} className=" space-y-6">
                 <h1 className=" font-medium text-[20px] leading-[20px]">
                   VII. CONTACT US
                 </h1>

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 function TermsConditions() {
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
   const termsList = [
     {
       h1: "Acceptance of Terms: ",

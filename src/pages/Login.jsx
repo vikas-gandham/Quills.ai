@@ -6,7 +6,7 @@ import { useEffect } from "react";
 function Login() {
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
   const [action, setAction] = useState("signIn");
   const signIn = () => {
     setAction("signIn");

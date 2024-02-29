@@ -5,44 +5,9 @@ import { BiSolidMessageRounded } from "react-icons/bi";
 import { TiArrowForward } from "react-icons/ti";
 import { IconContext } from "react-icons";
 import { useState } from "react";
+import { forwardRef } from "react";
 
-function ChatbotCust() {
-  // const [url, setUrl] = useState(" https://static.quills.png");
-  // const [logoRounded, setLogoRounded] = useState(true);
-  // const uiCustomization = [
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   {
-  //     label: "Logo Rounded",
-  //     type: "checkbox",
-  //     value: false,
-  //   },
-  //   { label: "Chat Heading Position" },
-  //   { label: " Bot Title", type: "text", value: " Quills.ai" },
-  //   {
-  //     label: "Bot Subtitle",
-  //     type: "text",
-  //     value: " Chat with us",
-  //   },
-  //   { label: "Header Background Color", type: "color", value: " #111827" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  //   { label: "Logo URL", type: "text", value: " https://static.quills.png" },
-  // ];
-
+const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
   const [uiCust, setUiCust] = useState({
     logoURL: " https://static.quills.png",
     logoRounded: true,
@@ -72,6 +37,7 @@ function ChatbotCust() {
 
   return (
     <div
+      ref={ref}
       id="chat"
       className=" pb-28 pt-[100px] mx-auto relative bg-[#1f1f1f] w-full"
     >
@@ -524,5 +490,6 @@ function ChatbotCust() {
       </div>
     </div>
   );
-}
+});
+
 export default ChatbotCust;
