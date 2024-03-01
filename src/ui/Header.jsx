@@ -139,20 +139,29 @@ function Header() {
     window.open("/login", "_blank");
   };
 
+  const industry = industryList.map((item, index) => (
+    <Link
+      key={index}
+      onClick={handleMouseOut}
+      className={item.classname}
+      to={item.pathname}
+    >
+      {item.icon} {item.name}
+    </Link>
+  ));
+
+  const role = roleList.map((item, index) => (
+    <Link
+      key={index}
+      onClick={handleMouseOut}
+      className={item.classname}
+      to={item.pathname}
+    >
+      {item.icon} {item.name}
+    </Link>
+  ));
+
   const hoverText = () => {
-    const industry = industryList.map((item, index) => (
-      <Link key={index} className={item.classname} to={item.pathname}>
-        {item.icon} {item.name}
-      </Link>
-    ));
-
-    const role = roleList.map((item, index) => (
-      <Link key={index} className={item.classname} to={item.pathname}>
-        {item.icon} {item.name}
-      </Link>
-    ));
-
-    console.log(hoverText);
     return (
       <div className=" p-8 border rounded-md bg-white shadow-md grid grid-cols-3 gap-20 col-span-3  absolute -translate-x-[30%] top-10 min-w-[max-content] shadow-sky-100  translate-y-6  ">
         <div className=" space-y-8">
@@ -188,7 +197,7 @@ function Header() {
         </Link>
 
         <div className="text-base-8">
-          {isHovering && hoverText}
+          {isHovering && hoverText()}
 
           <ul className="lg:flex items-center justify-between gap-6">
             <li>
