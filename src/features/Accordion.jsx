@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
-function Accordion(title, answer) {
+function Accordion({ title, answer }) {
   const [toggle, setToggle] = useState(false);
   return (
     <div className=" w-full flex-col flex gap-3 bg-white md:py-6 py-4 px-8 rounded-[30px] shadow-md">

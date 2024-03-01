@@ -1,4 +1,4 @@
-// import Accordion from "./Accordion";
+import Accordion from "./Accordion";
 
 function VisualData() {
   const itemList = [
@@ -149,7 +149,7 @@ function VisualData() {
                     </div>
                   </div>
                   <div className=" flex flex-col mt-[100px] lg:w-[70%] w-full mx-auto gap-4 ">
-                    {/* <Accordion
+                    <Accordion
                       title="What is Quills.ai?"
                       answer="Quills.ai is an advanced chatbot designed to assist with data queries, database integration, and CSV file handling. It streamlines data-related tasks and provides valuable insights."
                     />
@@ -164,7 +164,7 @@ function VisualData() {
                     <Accordion
                       title="What kind of support do you offer?"
                       answer="We offer email support to all users, and our Pro and Enterprise plans include priority support. Our dedicated support team is here to assist you with any questions or issues."
-                    /> */}
+                    />
                   </div>
                 </div>
               </div>
