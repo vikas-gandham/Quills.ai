@@ -23,6 +23,102 @@ function Header() {
   const [isHovering, setIsHovering] = useState(false);
   const [top, setTop] = useState(true);
 
+  const industryList = [
+    {
+      name: "Life Sciences",
+      pathname: "/solutions/industry/life-sciences",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <AiOutlineCreditCard />,
+    },
+    {
+      name: "BFSI",
+      pathname: "/solutions/industry/bfsi",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <HiOutlineBuildingLibrary />,
+    },
+    {
+      name: "Retail & E-commerce",
+      pathname: "/solutions/industry/retail-ecommerce",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <RiShoppingBasketLine />,
+    },
+    {
+      name: "Manufacturing & Logistics",
+      pathname: "/solutions/industry/manufacturing-logistics",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <FaTruck />,
+    },
+    {
+      name: "Healthcare & Life Sciences",
+      pathname: "/solutions/industry/healthcare-life-sciences",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <FaRegHospital />,
+    },
+    {
+      name: "Hospitality",
+      pathname: "/solutions/industry/hospitality",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <FaHotel />,
+    },
+  ];
+
+  const roleList = [
+    {
+      name: "Business Leader",
+      pathname: "/solutions/role",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <FaSuitcase />,
+    },
+    {
+      name: "Data Leader",
+      pathname: "/solutions/role",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <FaDatabase />,
+    },
+    {
+      name: " Analyst",
+      pathname: "/solutions/role",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <GoGraph />,
+    },
+    {
+      name: "Product Leader",
+      pathname: "/solutions/role",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <FaCube />,
+    },
+    {
+      name: "Developer",
+      pathname: "/solutions/role",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <IoCodeSlashSharp />,
+    },
+    {
+      name: "Marketing and Sales Leaders",
+      pathname: "/solutions/role",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <FaDollarSign />,
+    },
+    {
+      name: "Venture Capitalists",
+      pathname: "/solutions/role",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <FaHandHoldingUsd />,
+    },
+    {
+      name: "Operations",
+      pathname: "/solutions/role",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <IoMdSettings />,
+    },
+    {
+      name: "IT Infrastructure",
+      pathname: "/solutions/role",
+      classname: " hover:text-blue-500 cursor-pointer flex items-center gap-3",
+      icon: <FaBarsProgress />,
+    },
+  ];
+
   useEffect(() => {
     const scrollHandler = () => {
       window.scrollY > 10 ? setTop(false) : setTop(true);
@@ -44,117 +140,6 @@ function Header() {
   };
 
   const hoverText = () => {
-    const industryList = [
-      {
-        name: "Life Sciences",
-        pathname: "/solutions/industry/life-sciences",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <AiOutlineCreditCard />,
-      },
-      {
-        name: "BFSI",
-        pathname: "/solutions/industry/bfsi",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <HiOutlineBuildingLibrary />,
-      },
-      {
-        name: "Retail & E-commerce",
-        pathname: "/solutions/industry/retail-ecommerce",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <RiShoppingBasketLine />,
-      },
-      {
-        name: "Manufacturing & Logistics",
-        pathname: "/solutions/industry/manufacturing-logistics",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <FaTruck />,
-      },
-      {
-        name: "Healthcare & Life Sciences",
-        pathname: "/solutions/industry/healthcare-life-sciences",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <FaRegHospital />,
-      },
-      {
-        name: "Hospitality",
-        pathname: "/solutions/industry/hospitality",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <FaHotel />,
-      },
-    ];
-
-    const roleList = [
-      {
-        name: "Business Leader",
-        pathname: "/solutions/role",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <FaSuitcase />,
-      },
-      {
-        name: "Data Leader",
-        pathname: "/solutions/role",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <FaDatabase />,
-      },
-      {
-        name: " Analyst",
-        pathname: "/solutions/role",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <GoGraph />,
-      },
-      {
-        name: "Product Leader",
-        pathname: "/solutions/role",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <FaCube />,
-      },
-      {
-        name: "Developer",
-        pathname: "/solutions/role",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <IoCodeSlashSharp />,
-      },
-      {
-        name: "Marketing and Sales Leaders",
-        pathname: "/solutions/role",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <FaDollarSign />,
-      },
-      {
-        name: "Venture Capitalists",
-        pathname: "/solutions/role",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <FaHandHoldingUsd />,
-      },
-      {
-        name: "Operations",
-        pathname: "/solutions/role",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <IoMdSettings />,
-      },
-      {
-        name: "IT Infrastructure",
-        pathname: "/solutions/role",
-        classname:
-          " hover:text-blue-500 cursor-pointer flex items-center gap-3",
-        icon: <FaBarsProgress />,
-      },
-    ];
-
     const industry = industryList.map((item, index) => (
       <Link key={index} className={item.classname} to={item.pathname}>
         {item.icon} {item.name}
@@ -167,6 +152,7 @@ function Header() {
       </Link>
     ));
 
+    console.log(hoverText);
     return (
       <div className=" p-8 border rounded-md bg-white shadow-md grid grid-cols-3 gap-20 col-span-3  absolute -translate-x-[30%] top-10 min-w-[max-content] shadow-sky-100  translate-y-6  ">
         <div className=" space-y-8">
@@ -203,6 +189,7 @@ function Header() {
 
         <div className="text-base-8">
           {isHovering && hoverText}
+
           <ul className="lg:flex items-center justify-between gap-6">
             <li>
               <Link to="/features">Features</Link>
