@@ -1,6 +1,6 @@
 import { FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
-function DemoButton() {
+function DemoButton({ type }) {
   const [anchorColor, setAnchorColor] = useState(
     "border px-2 py-2 w-[max-content] rounded-lg bg-slate-700 "
   );
@@ -16,11 +16,18 @@ function DemoButton() {
     // setIsHovering(false);
   };
 
+  const styles = {
+    primary:
+      "flex items-center justify-center gap-4 bg-black text-white px-6 py-3 rounded-lg",
+    secondary:
+      "flex items-center justify-center gap-4 bg-yellow text-black px-6 py-3 rounded-lg border border-black hover:bg-black hover:text-white",
+  };
+
   return (
     <button
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
-      className="flex items-center justify-center gap-4 bg-black text-white px-6 py-3 rounded-lg  "
+      className={styles[type]}
     >
       <span className="text-[18px] leading-[24px] font-[500]">Book a Demo</span>
 

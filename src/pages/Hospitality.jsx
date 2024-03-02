@@ -17,7 +17,7 @@ function Hospitality() {
               <p className=" undefined md:text-[20px]  w-full  font-[400] md:leading-[40px] text-[16px] leading-[24px] ">
                 Unlock the Power of Your Data in Plain English
               </p>
-              <DemoButton />
+              <DemoButton type="primary" />
             </div>
           </div>
         </div>

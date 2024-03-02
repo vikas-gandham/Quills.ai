@@ -19,7 +19,7 @@ function Role() {
                 organization. Quills.ai provides role-specific insights and
                 tools to enhance your workflow and decision-making.
               </p>
-              <DemoButton />
+              <DemoButton type="primary" />
             </div>
           </div>
         </div>

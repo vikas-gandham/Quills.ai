@@ -7,7 +7,7 @@ function Button({ children, to, type }) {
     secondary:
       "px-5 py-2.5 inline-block text-sm bg-none outline-blue-500 font-semibold text-blue-500 transition-colors duration-300 focus:outline-none hover:text-black rounded-lg border-b-2 border border-blue-400 text-[14px]",
     bgnone:
-      "px-5 py-2.5 inline-block text-sm bg-none outline-none font-semibold transition-colors duration-300 focus:outline-none hover:text-blue-500 text-black text-[14px]",
+      "px-5 py-2.5 inline-block text-sm bg-none outline-none font-semibold transition-colors duration-300 focus:outline-none hover:text-blue-500 text-black text-[14px] border border-white rounded-md text-white lg:hover:text-blue-500 lg:text-stone-800 ",
     bgtrans:
       "px-5 py-2.5 inline-block text-sm bg-[#f5f5f5] outline-blue-500 font-semibold text-black transition-all duration-300 focus:outline-none hover:text-white rounded-lg border-b-2 border border-transparent border-grey-700 hover:bg-gray-500 text-[14px]",
   };

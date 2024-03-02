@@ -23,7 +23,7 @@ function LifeSciences() {
                 models to revolutionise research, product development, and
                 improve health outcomes for patients.
               </p>
-              <DemoButton />
+              <DemoButton type="primary" />
             </div>
           </div>
         </div>

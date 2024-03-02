@@ -24,7 +24,7 @@ function Bfsi() {
                 banking, financial services, and insurance operations for
                 increased efficiency and customer satisfaction.
               </p>
-              <DemoButton />
+              <DemoButton type="primary" />
             </div>
           </div>
         </div>

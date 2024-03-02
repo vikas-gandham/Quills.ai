@@ -23,7 +23,7 @@ function Ecommerce() {
                 e-commerce operations, improving sales, customer engagement, and
                 overall business success.
               </p>
-              <DemoButton />
+              <DemoButton type="primary" />
             </div>
           </div>
         </div>

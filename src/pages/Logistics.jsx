@@ -21,7 +21,7 @@ function Logistics() {
                 operations. Our innovative solutions harness powerful algorithms
                 and predictive models to revolutionize manufacturing, logistics,
                 and drive efficiency across the industry.
-                <DemoButton />
+                <DemoButton type="primary" />
               </p>
             </div>
           </div>
