@@ -136,7 +136,7 @@ function Header() {
 
   const handleMouseOut = () => {
     setIsHovering(false);
-    setToggle(!toggle);
+    setToggle(false);
   };
 
   const handleLoginClick = () => {
@@ -181,7 +181,7 @@ function Header() {
 
   const hoverText = () => {
     return (
-      <div className=" p-8 border rounded-md bg-white shadow-md grid grid-cols-2 lg:grid-cols-3 gap-20 col-span-3  absolute lg:-translate-x-[30%] top-10 min-w-[max-content] shadow-sky-100  translate-y-12  ">
+      <div className=" p-8 border rounded-md bg-white shadow-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 col-span-3  absolute lg:-translate-x-[30%] top-10 min-w-[max-content] shadow-sky-100  translate-y-12  ">
         <div className=" space-y-8">
           <h1 className="font-semibold text-lg">By Industry</h1>
           <div className=" space-y-3 flex flex-col gap-1 cursor-pointer">

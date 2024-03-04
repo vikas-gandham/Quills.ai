@@ -15,8 +15,8 @@ function Login() {
     setAction("createAccount");
   };
   return (
-    <div className="  w-full relative grid grid-cols-2 ">
-      <div className="   w-[500px] mx-[50%] lg:mx-[75%] flex flex-col justify-center item-center  ">
+    <div className="   relative grid grid-cols-2 ">
+      <div className="   md:w-[500px] w-[350px] mx-[50%] lg:mx-[75%] flex flex-col justify-center item-center  ">
         <div className="flex justify-center">
           <img
             src="/quills5.png"

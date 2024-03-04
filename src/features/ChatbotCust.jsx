@@ -68,7 +68,7 @@ const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
                     className="w-8 h-8 order-1 rounded-full"
                   />
                   <div className="order-2">
-                    <h2 className="text-lg font-semibold">Quills.ai</h2>
+                    <h2 className="text-lg font-semibold">{uiCust.botTitle}</h2>
                     <p className="text-xs">{uiCust.botSubtitle}</p>
                   </div>
                 </div>
@@ -77,7 +77,7 @@ const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
                     <div>
                       <div className="chat chat-start max-w-[700px] flex justify-start pl-4">
                         <div className="chat-bubble text-[14px] bg-[white] text-black border-2 leading-[20px] w-[max-content] py-2 px-4 rounded-full rounded-bl-none">
-                          <p>👋 Hi Iam Quills bot. How can I help you?</p>
+                          <p>{uiCust.botDefaultMessage}</p>
                         </div>
                       </div>
                       <div className=" chat chat-end mt-4 pr-4 max-w-[700px] flex justify-end">

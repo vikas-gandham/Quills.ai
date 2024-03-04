@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import YoutubeClip from "../features/YoutubeClip";
 
 function Contact() {
   useEffect(() => {
@@ -48,9 +49,9 @@ function Contact() {
     },
   ];
   return (
-    <div className="w-full m-[40px] p-40 max-auto flex flex-col items-center justify-center gap-10 ">
+    <div className="w-full m-[40px] p-20 md:p-40 max-auto flex flex-col items-center justify-center gap-10 ">
       <div className="lg:w-[80%]  ">
-        <h1 className=" md:text-[42px] md:leading-[50px] font-[500] text-[38px] leading-[45px] ">
+        <h1 className=" md:text-[42px]   md:leading-[50px] font-[500] text-[38px] leading-[45px] ">
           Personal AI chat assistant helping you to visualize the whole story
           from your data
         </h1>
@@ -85,6 +86,9 @@ function Contact() {
           <img src="c6.png" className="max-w-[150px] max-h-[60px]" />
           <img src="logo2.png" className="max-w-[150px] max-h-[60px]" />
         </div>
+      </div>
+      <div>
+        <YoutubeClip />
       </div>
     </div>
   );
