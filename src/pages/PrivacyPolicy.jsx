@@ -90,7 +90,7 @@ function PrivacyPolicy() {
                   Your Rights Regarding the Use of Your Personal Information
                 </li>
                 <li
-                  onClick={() => handleClick(re51)}
+                  onClick={() => handleClick(ref5)}
                   className=" list-item text-[#112448]  font-medium text-[14px] leading-[20px] cursor-pointer scroll-py-6 "
                 >
                   Links to Other Websites

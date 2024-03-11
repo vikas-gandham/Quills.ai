@@ -3,11 +3,11 @@ import { FaArrowRightLong, FaCircleArrowRight } from "react-icons/fa6";
 import { IoIosArrowForward, IoIosArrowDroprightCircle } from "react-icons/io";
 import { BiSolidMessageRounded } from "react-icons/bi";
 import { TiArrowForward } from "react-icons/ti";
-import { IconContext } from "react-icons";
 import { useState } from "react";
 import { forwardRef } from "react";
 
 const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
+  const [isActive, setIsActive] = useState(false);
   const [uiCust, setUiCust] = useState({
     logoURL: " https://static.quills.png",
     logoRounded: true,
@@ -17,7 +17,7 @@ const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
     headerBackgroundColor: " #111827",
     headerTextColor: "#ffffff",
     subheaderTextColor: "#f1f1f1",
-    subheaderBackgroundColor: "#000",
+    subheaderBackgroundColor: "#111827",
     chatWindowBackgroundColor: "#f1f1f1",
     chatWindowBackgroundImageLink:
       "https://images.unsplash.com/photo-1517384084767-6bc118943770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNoYXQlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
@@ -31,14 +31,13 @@ const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
     inputPlaceholderText: "Type a message...",
     inputBackgroundColor: "#fff",
     inputTextColor: "#000",
-    sendButtonIcon: "",
+    sendButtonIcon: "arrow7",
     sendIconColor: "#121826",
   });
 
   return (
     <div
       ref={ref}
-      id="chat"
       className=" pb-28 pt-[100px] mx-auto relative bg-[#1f1f1f] w-full"
     >
       <div className="md:w-[80%] w-[95%] text-white mx-auto space-y-4">
@@ -60,40 +59,181 @@ const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
           <div className="grid grid-cols-1 lg:grid-cols-8 gap-5 w-full relative">
             <div className="bg-[#303030] border border-[#484848] z-[5] h-[max-content] rounded-lg lg:p-4 p-2 lg:sticky top-[20px] shadow-md lg:col-span-3 col-span-1">
               <h2 className="text-lg font-semibold mb-4">Chat Preview</h2>
-              <div className="overflow-hidden w-full shadoe-lg rounded-lg bg-grey-200 border border-white">
-                <div className="flex justify-start gap-2 items-center py-2 px-4 w-full bg-[#111827]color">
-                  <img
-                    src="/quills.png"
-                    alt="Chatbot logo"
-                    className="w-8 h-8 order-1 rounded-full"
-                  />
-                  <div className="order-2">
-                    <h2 className="text-lg font-semibold">{uiCust.botTitle}</h2>
-                    <p className="text-xs">{uiCust.botSubtitle}</p>
+              <div
+                className="overflow-hidden w-full shadow-lg rounded-lg bg-grey-200 border border-white"
+                style={{ borderColor: uiCust.chatWindowBorderColor }}
+              >
+                {uiCust.chatHeadingPosition === "logo-start" ? (
+                  <div
+                    className=" flex justify-between  items-center py-2 px-4 w-full "
+                    style={{ backgroundColor: uiCust.headerBackgroundColor }}
+                  >
+                    <img
+                      src="/quills.png"
+                      alt="Chatbot logo"
+                      className="w-8 h-8 order-1 rounded-full"
+                    />
+                    <div className="order-2">
+                      <h2
+                        className="text-lg font-semibold "
+                        style={{ color: uiCust.headerTextColor }}
+                      >
+                        {uiCust.botTitle}
+                      </h2>
+                      <p
+                        className="text-xs"
+                        style={{
+                          color: uiCust.subheaderTextColor,
+                          backgroundColor: uiCust.subheaderBackgroundColor,
+                        }}
+                      >
+                        {uiCust.botSubtitle}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="bg-white w-full">
+                ) : uiCust.chatHeadingPosition === "text-start" ? (
+                  <div
+                    className=" flex justify-between  items-center py-2 px-4 w-full "
+                    style={{ backgroundColor: uiCust.headerBackgroundColor }}
+                  >
+                    <div className="order-1">
+                      <h2
+                        className="text-lg font-semibold "
+                        style={{ color: uiCust.headerTextColor }}
+                      >
+                        {uiCust.botTitle}
+                      </h2>
+                      <p
+                        className="text-xs"
+                        style={{
+                          color: uiCust.subheaderTextColor,
+                          backgroundColor: uiCust.subheaderBackgroundColor,
+                        }}
+                      >
+                        {uiCust.botSubtitle}
+                      </p>
+                    </div>
+
+                    <img
+                      src="/quills.png"
+                      alt="Chatbot logo"
+                      className="w-8 h-8 order-1 rounded-full"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className=" flex justify-start gap-2 items-center py-2 px-4 w-full "
+                    style={{ backgroundColor: uiCust.headerBackgroundColor }}
+                  >
+                    <img
+                      src="/quills.png"
+                      alt="Chatbot logo"
+                      className="w-8 h-8 order-1 rounded-full"
+                    />
+                    <div className="order-2">
+                      <h2
+                        className="text-lg font-semibold "
+                        style={{ color: uiCust.headerTextColor }}
+                      >
+                        {uiCust.botTitle}
+                      </h2>
+                      <p
+                        className="text-xs"
+                        style={{
+                          color: uiCust.subheaderTextColor,
+                          backgroundColor: uiCust.subheaderBackgroundColor,
+                        }}
+                      >
+                        {uiCust.botSubtitle}
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <div
+                  className=" w-full"
+                  style={{
+                    backgroundColor: uiCust.chatWindowBackgroundColor,
+                  }}
+                >
                   <div className="py-2 max-h-[450px] min-h-[450px] overflow-scroll flex flex-col justify-between">
                     <div>
-                      <div className="chat chat-start max-w-[700px] flex justify-start pl-4">
-                        <div className="chat-bubble text-[14px] bg-[white] text-black border-2 leading-[20px] w-[max-content] py-2 px-4 rounded-full rounded-bl-none">
+                      <div
+                        className="chat chat-start max-w-[700px] flex justify-start pl-4"
+                        style={{ borderColor: uiCust.chatWindowBorderColor }}
+                      >
+                        <div
+                          className="chat-bubble text-[14px] bg-[white] text-black border-2 leading-[20px] w-[max-content] py-2 px-4 rounded-full rounded-bl-none"
+                          style={{
+                            backgroundColor: uiCust.botMessageBackgroundColor,
+                            color: uiCust.botMessageTextColor,
+                          }}
+                        >
                           <p>{uiCust.botDefaultMessage}</p>
                         </div>
                       </div>
                       <div className=" chat chat-end mt-4 pr-4 max-w-[700px] flex justify-end">
-                        <div className="chat-bubble  text-[14px] leading-[20px] bg-[#262626] py-2 px-4 w-[max-content] rounded-full rounded-br-none ">
+                        <div
+                          className="chat-bubble  text-[14px] leading-[20px] bg-[#262626] py-2 px-4 w-[max-content] rounded-full rounded-br-none "
+                          style={{
+                            backgroundColor: uiCust.userMessageBackgroundColor,
+                            color: uiCust.userMessageTextColor,
+                          }}
+                        >
                           <p>Message from the users</p>
                         </div>
                       </div>
                     </div>
-                    <div className=" pb-2 shadow-sm">
+                    <div
+                      className=" pb-2 shadow-sm"
+                      style={{ backgroundColor: uiCust.sendBarBackgroundColor }}
+                    >
                       <div className=" flex  items-center gap-2 p-2">
                         <input
                           className="w-full border placeholder:font-light rounded-full focus:outline-sky-400 py-2 px-4  bg-white text-black"
+                          style={{
+                            backgroundColor: uiCust.inputBackgroundColor,
+                            color: uiCust.inputTextColor,
+                          }}
                           placeholder={uiCust.inputPlaceholderText}
                           type="text"
                         />
-                        <BiSolidMessageRounded size="1.5rem" color="#000" />
+
+                        {uiCust.sendButtonIcon === "arrow1" ? (
+                          <FaArrowRightLong
+                            size="1.3rem"
+                            color={uiCust.sendIconColor}
+                          />
+                        ) : uiCust.sendButtonIcon === "arrow2" ? (
+                          <FaCircleArrowRight
+                            size="1.3rem"
+                            color={uiCust.sendIconColor}
+                          />
+                        ) : uiCust.sendButtonIcon === "arrow3" ? (
+                          <IoIosArrowForward
+                            size="1.3rem"
+                            color={uiCust.sendIconColor}
+                          />
+                        ) : uiCust.sendButtonIcon === "arrow4" ? (
+                          <IoIosArrowDroprightCircle
+                            size="1.3rem"
+                            color={uiCust.sendIconColor}
+                          />
+                        ) : uiCust.sendButtonIcon === "arrow5" ? (
+                          <FaLocationArrow
+                            size="1.3rem"
+                            color={uiCust.sendIconColor}
+                          />
+                        ) : uiCust.sendButtonIcon === "arrow6" ? (
+                          <TiArrowForward
+                            size="1.3rem"
+                            color={uiCust.sendIconColor}
+                          />
+                        ) : (
+                          <BiSolidMessageRounded
+                            size="1.5rem"
+                            color={uiCust.sendIconColor}
+                          />
+                        )}
                       </div>
                       <p className=" text-center font-light text-xs text-gray-300">
                         Powered by Kloudhunt
@@ -454,17 +594,92 @@ const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
                   <label className="block text-sm font-medium text-white">
                     Send Button Icon
                   </label>
-                  <div className=" items-center flex gap-5 ">
-                    <IconContext.Provider value={{ size: "1.3rem" }}>
-                      <FaArrowRightLong />
-                      <FaCircleArrowRight />
-                      <IoIosArrowForward />
-                      <IoIosArrowDroprightCircle />
-                      <FaLocationArrow />
-                      <TiArrowForward />
-                      <BiSolidMessageRounded color="#00bfff" />
-                    </IconContext.Provider>
-                  </div>
+                  <nav className=" flex gap-4 ">
+                    <FaArrowRightLong
+                      onClick={() => {
+                        setUiCust.sendButtonIcon("arrow1");
+                        setIsActive(!isActive);
+                      }}
+                      size="1.3rem"
+                      color={isActive ? "#00bfff" : "#fff"}
+                    />
+
+                    <button
+                      onClick={() => {
+                        setUiCust.sendButtonIcon("arrow2");
+                        setIsActive(!isActive);
+                      }}
+                    >
+                      {isActive ? (
+                        <FaCircleArrowRight size="1.3rem" color="#00bfff" />
+                      ) : (
+                        <FaCircleArrowRight size="1.3rem" />
+                      )}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setUiCust.sendButtonIcon("arrow3");
+                        setIsActive(!isActive);
+                      }}
+                    >
+                      {isActive ? (
+                        <IoIosArrowForward size="1.3rem" color="#00bfff" />
+                      ) : (
+                        <IoIosArrowForward size="1.3rem" />
+                      )}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setUiCust.sendButtonIcon("arrow4");
+                        setIsActive(!isActive);
+                      }}
+                    >
+                      {isActive ? (
+                        <IoIosArrowDroprightCircle
+                          size="1.3rem"
+                          color="#00bfff"
+                        />
+                      ) : (
+                        <IoIosArrowDroprightCircle size="1.3rem" />
+                      )}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setUiCust.sendButtonIcon("arrow5");
+                        setIsActive(!isActive);
+                      }}
+                    >
+                      {isActive ? (
+                        <FaLocationArrow size="1.3rem" color="#00bfff" />
+                      ) : (
+                        <FaLocationArrow size="1.3rem" />
+                      )}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setUiCust.sendButtonIcon("arrow6");
+                        setIsActive(!isActive);
+                      }}
+                    >
+                      {isActive ? (
+                        <TiArrowForward size="1.3rem" color="#00bfff" />
+                      ) : (
+                        <TiArrowForward size="1.3rem" />
+                      )}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setUiCust.sendButtonIcon("arrow7");
+                        setIsActive(!isActive);
+                      }}
+                    >
+                      {isActive ? (
+                        <BiSolidMessageRounded size="1.3rem" />
+                      ) : (
+                        <BiSolidMessageRounded size="1.3rem" color="#00bfff" />
+                      )}
+                    </button>
+                  </nav>
                 </div>
 
                 <div className="space-y-2 w-full ">

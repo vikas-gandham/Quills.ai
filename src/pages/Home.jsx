@@ -6,6 +6,7 @@ import DataExp from "../features/DataExp";
 import Brands from "../features/Brands";
 import VisualData from "../features/VisualData";
 import { useEffect, useRef } from "react";
+import Testimonial from "../features/Testimonial";
 
 function Home() {
   const chatbotref = useRef(null);
@@ -29,6 +30,7 @@ function Home() {
       <DataExp />
       <Brands />
       <VisualData />
+      {/* <Testimonial /> */}
     </div>
   );
 }
