@@ -1,8 +1,10 @@
+import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+
 function Solutions() {
-  return (
-    <div className=" my-24 text-center">
-      <h1>Solutions</h1>
-    </div>
-  );
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return <Outlet />;
 }
 export default Solutions;

@@ -4,8 +4,8 @@ function Companies() {
       <h1 className="text-[1.125rem] leading-[175%] fonmedium text-center">
         Trusted by exceptional companies around the world
       </h1>
-      <div className="flex items-center justify-center gap-4 overflow-hidden w-full lg:w-[80%] relative mx-auto">
-        <div className="animate-loop-scroll flex items-center gap-4  grayscale space-x-8">
+      <div className="flex items-center justify-center gap-12 overflow-hidden w-full lg:w-[80%] relative mx-auto">
+        <div className="animate-loop-scroll flex items-center min-w-full shrink-0 gap-4  grayscale justify-around">
           <img src="/c1.png" alt="logo" className="max-w-none max-h-[60px]" />
 
           <img src="/c2.png" alt="logo" className="max-w-none max-h-[60px]" />
@@ -17,7 +17,7 @@ function Companies() {
           <img src="/logo2.png" alt="logo" className="max-w-none max-h-8" />
         </div>
         <div
-          className="animate-loop-scroll flex items-center gap-4 grayscale space-x-8"
+          className="animate-loop-scroll flex items-center min-w-full shrink-0 gap-4 grayscale justify-around"
           aria-hidden="true"
         >
           <img src="/c1.png" alt="logo" className="max-w-none max-h-[60px]" />

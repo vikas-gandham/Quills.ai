@@ -4,7 +4,7 @@ import { RiRecordCircleLine } from "react-icons/ri";
 
 function Screen() {
   return (
-    <div className="pt-[100px]  md:w-[80%] w-[90% mx-auto text-center reltive z-[2] mb-[50px] mt-[5px]">
+    <div className="pt-[150px]  md:w-[80%] w-[90% mx-auto text-center reltive z-[2] mb-[50px] mt-[5px]">
       <div className="lg:w-[75%] mx-auto space-y-[40px]">
         <div className="space-y-[24px] w-full flex flex-col items-center justify-between">
           <div className="flex items-center justify-center gap-2 px-4 py-2  border border-grey shadow-sm bg-white shadow-blue-100 break-all mx-auto rounded-full w-[max-content] ">
@@ -16,7 +16,7 @@ function Screen() {
           <h1 className="text-[#131316] md:text-[64px] font-[500] text-[36px] leading-[110%] pt-[10px]">
             AI-Driven
             <span className="bg-gradient-to-br from-blue-700 to-blue-300 bg-clip-text text-transparent">
-              Chatbot
+              &nbsp;Chatbot&nbsp;
             </span>
             with Instant SQL Query Generation
           </h1>

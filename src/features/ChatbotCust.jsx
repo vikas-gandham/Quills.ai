@@ -4,10 +4,40 @@ import { IoIosArrowForward, IoIosArrowDroprightCircle } from "react-icons/io";
 import { BiSolidMessageRounded } from "react-icons/bi";
 import { TiArrowForward } from "react-icons/ti";
 import { IconContext } from "react-icons";
+import { useState } from "react";
+import { forwardRef } from "react";
 
-function ChatbotCust() {
+const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
+  const [uiCust, setUiCust] = useState({
+    logoURL: " https://static.quills.png",
+    logoRounded: true,
+    chatHeadingPosition: " logo-side",
+    botTitle: "Quills.ai",
+    botSubtitle: " Chat with us",
+    headerBackgroundColor: " #111827",
+    headerTextColor: "#ffffff",
+    subheaderTextColor: "#f1f1f1",
+    subheaderBackgroundColor: "#000",
+    chatWindowBackgroundColor: "#f1f1f1",
+    chatWindowBackgroundImageLink:
+      "https://images.unsplash.com/photo-1517384084767-6bc118943770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNoYXQlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+    chatWindowBorderColor: "#dcdcdc",
+    botDefaultMessage: "👋 Hi Iam Quills bot. How can I help you?",
+    botMessageBackgroundColor: "blue-200",
+    botMessageTextColor: "blue-900",
+    userMessageBackgroundColor: "gray-200",
+    userMessageTextColor: "gray-900",
+    sendBarBackgroundColor: "blue-500",
+    inputPlaceholderText: "Type a message...",
+    inputBackgroundColor: "#fff",
+    inputTextColor: "#000",
+    sendButtonIcon: "",
+    sendIconColor: "#121826",
+  });
+
   return (
     <div
+      ref={ref}
       id="chat"
       className=" pb-28 pt-[100px] mx-auto relative bg-[#1f1f1f] w-full"
     >
@@ -38,8 +68,8 @@ function ChatbotCust() {
                     className="w-8 h-8 order-1 rounded-full"
                   />
                   <div className="order-2">
-                    <h2 className="text-lg font-semibold">Quills.ai</h2>
-                    <p className="text-xs">Chat with us</p>
+                    <h2 className="text-lg font-semibold">{uiCust.botTitle}</h2>
+                    <p className="text-xs">{uiCust.botSubtitle}</p>
                   </div>
                 </div>
                 <div className="bg-white w-full">
@@ -47,7 +77,7 @@ function ChatbotCust() {
                     <div>
                       <div className="chat chat-start max-w-[700px] flex justify-start pl-4">
                         <div className="chat-bubble text-[14px] bg-[white] text-black border-2 leading-[20px] w-[max-content] py-2 px-4 rounded-full rounded-bl-none">
-                          <p>👋 Hi Iam Quills bot. How can I help you?</p>
+                          <p>{uiCust.botDefaultMessage}</p>
                         </div>
                       </div>
                       <div className=" chat chat-end mt-4 pr-4 max-w-[700px] flex justify-end">
@@ -60,7 +90,7 @@ function ChatbotCust() {
                       <div className=" flex  items-center gap-2 p-2">
                         <input
                           className="w-full border placeholder:font-light rounded-full focus:outline-sky-400 py-2 px-4  bg-white text-black"
-                          placeholder="Type a message..."
+                          placeholder={uiCust.inputPlaceholderText}
                           type="text"
                         />
                         <BiSolidMessageRounded size="1.5rem" color="#000" />
@@ -85,14 +115,49 @@ function ChatbotCust() {
                   <input
                     className="w-full border rounded-md py-2 px-3 text-white bg-[#282828] xs:max-w-full max-w-[200px]"
                     type="text"
-                    value="  https://static.quills.png"
+                    value={uiCust.logoURL}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        logoURL: e.target.value,
+                      }));
+                    }}
                   />
+                </div>
+                <div className="space-y-2 w-full  z-[1] relative ">
+                  <label className="block text-sm font-medium text-white">
+                    Logo Rounded
+                  </label>
+                  <label className="relative inline-flex items-center cursor-pointer">
+                    <input
+                      className="sr-only peer"
+                      type="checkbox"
+                      checked={uiCust.logoRounded}
+                      onChange={(e) => {
+                        setUiCust((prevState) => ({
+                          ...prevState,
+                          logoRounded: e.target.checked,
+                        }));
+                      }}
+                    ></input>
+                    <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-500"></div>
+                  </label>
                 </div>
                 <div className="space-y-2 w-full  ">
                   <label className="block text-sm font-medium text-white">
                     Chat Heading Position
                   </label>
-                  <select className="w-full border rounded-md py-2 px-3 text-white bg-[#282828] dark:bg-[#282828] xs:max-w-full max-w-[200px]">
+                  <select
+                    value={uiCust.chatHeadingPosition}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        chatHeadingPosition: e.target.value,
+                      }));
+                    }}
+                    className="w-full border rounded-md py-2 px-3 text-white bg-[#282828] dark:bg-[#282828] xs:max-w-full max-w-[200px]"
+                  >
+                    <option value="logo-side">Logo on Side</option>
                     <option value="logo-start">Logo at Start</option>
                     <option value="text-start">Text at Start</option>
                   </select>
@@ -104,7 +169,13 @@ function ChatbotCust() {
                   <input
                     type="text"
                     className="w-full border rounded-md py-2 px-3 text-white bg-[#282828] dark:bg-[#282828] xs:max-w-full max-w-[200px]"
-                    value="Quills.ai"
+                    value={uiCust.botTitle}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        botTitle: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -114,7 +185,13 @@ function ChatbotCust() {
                   <input
                     type="text"
                     className="w-full border rounded-md py-2 px-3 text-white bg-[#282828] dark:bg-[#282828]  xs:max-w-full max-w-[200px]"
-                    value=" Chat with us"
+                    value={uiCust.botSubtitle}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        botSubtitle: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -124,7 +201,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="  p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value="#111827"
+                    value={uiCust.headerBackgroundColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        headerBackgroundColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -134,7 +217,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className=" p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value="#ffffff"
+                    value={uiCust.headerTextColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        headerTextColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -144,7 +233,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value="f1f1f1"
+                    value={uiCust.subheaderTextColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        subheaderTextColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -154,7 +249,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value
+                    value={uiCust.subheaderBackgroundColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        subheaderBackgroundColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -164,7 +265,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value="#f1f1f1"
+                    value={uiCust.chatWindowBackgroundColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        chatWindowBackgroundColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -172,10 +279,15 @@ function ChatbotCust() {
                     Chat Window Background Image Link
                   </label>
                   <input
-                    placeholder="https://images.unsplash.com/photo-1517384084767-6bc118943770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNoYXQlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                    placeholder={uiCust.chatWindowBackgroundImageLink}
                     type="text"
                     className="w-full border rounded-md py-2 px-3 text-white bg-[#282828] dark:bg-[#282828] xs:max-w-full max-w-[200px]"
-                    value
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        chatWindowBackgroundImageLink: e.target.placeholder,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -185,7 +297,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value="#dcdcdc"
+                    value={uiCust.chatWindowBorderColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        chatWindowBorderColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -195,7 +313,13 @@ function ChatbotCust() {
                   <input
                     type="text"
                     className="w-full border rounded-md py-2 px-3 text-white bg-[#282828] dark:bg-[#282828] xs:max-w-full max-w-[200px]"
-                    value="👋 Hi Iam Quills bot. How can I help you?"
+                    value={uiCust.botDefaultMessage}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        botDefaultMessage: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -205,7 +329,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value="blue-200"
+                    value={uiCust.botMessageBackgroundColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        botMessageBackgroundColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -215,7 +345,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value="blue-900"
+                    value={uiCust.botMessageTextColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        botMessageTextColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -225,7 +361,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    Value="gray-200"
+                    value={uiCust.userMessageBackgroundColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        userMessageBackgroundColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -235,7 +377,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value="gray-900"
+                    value={uiCust.userMessageTextColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        userMessageTextColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -245,7 +393,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value="blue-500"
+                    value={uiCust.sendBarBackgroundColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        sendBarBackgroundColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -255,7 +409,13 @@ function ChatbotCust() {
                   <input
                     type="text"
                     className="w-full border rounded-md py-2 px-3 text-white bg-[#282828] dark:bg-[#282828] xs:max-w-full max-w-[200px]"
-                    value="Type a message..."
+                    value={uiCust.inputPlaceholderText}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        inputPlaceholderText: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -265,7 +425,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value="#fff"
+                    value={uiCust.inputBackgroundColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        inputBackgroundColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
@@ -275,14 +441,20 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value="#000"
+                    value={uiCust.inputTextColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        inputTextColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
                 <div className="space-y-2 w-full ">
                   <label className="block text-sm font-medium text-white">
                     Send Button Icon
                   </label>
-                  <div className=" items-center flex gap-5 justify-center">
+                  <div className=" items-center flex gap-5 ">
                     <IconContext.Provider value={{ size: "1.3rem" }}>
                       <FaArrowRightLong />
                       <FaCircleArrowRight />
@@ -302,7 +474,13 @@ function ChatbotCust() {
                   <input
                     type="color"
                     className="p-1 box-content   min-h-[20px] min-w-[40px] bg-[#282828] dark:bg-[#282828]"
-                    value="#121826"
+                    value={uiCust.sendIconColor}
+                    onChange={(e) => {
+                      setUiCust((prevState) => ({
+                        ...prevState,
+                        sendIconColor: e.target.value,
+                      }));
+                    }}
                   />
                 </div>
               </div>
@@ -312,5 +490,6 @@ function ChatbotCust() {
       </div>
     </div>
   );
-}
+});
+
 export default ChatbotCust;
