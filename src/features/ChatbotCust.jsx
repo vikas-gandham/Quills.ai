@@ -7,7 +7,6 @@ import { useState } from "react";
 import { forwardRef } from "react";
 
 const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
-  const [isActive, setIsActive] = useState(false);
   const [uiCust, setUiCust] = useState({
     logoURL: " https://static.quills.png",
     logoRounded: true,
@@ -595,22 +594,29 @@ const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
                     Send Button Icon
                   </label>
                   <nav className=" flex gap-4 ">
-                    <FaArrowRightLong
-                      onClick={() => {
-                        setUiCust.sendButtonIcon("arrow1");
-                        setIsActive(!isActive);
-                      }}
-                      size="1.3rem"
-                      color={isActive ? "#00bfff" : "#fff"}
-                    />
-
                     <button
                       onClick={() => {
-                        setUiCust.sendButtonIcon("arrow2");
-                        setIsActive(!isActive);
+                        setUiCust((prevState) => ({
+                          ...prevState,
+                          sendButtonIcon: "arrow1",
+                        }));
                       }}
                     >
-                      {isActive ? (
+                      {setUiCust.sendButtonIcon === "arrow1" ? (
+                        <FaArrowRightLong size="1.3rem" color="#00bfff" />
+                      ) : (
+                        <FaArrowRightLong size="1.3rem" />
+                      )}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setUiCust((prevState) => ({
+                          ...prevState,
+                          sendButtonIcon: "arrow2",
+                        }));
+                      }}
+                    >
+                      {setUiCust.sendButtonIcon === "arrow2" ? (
                         <FaCircleArrowRight size="1.3rem" color="#00bfff" />
                       ) : (
                         <FaCircleArrowRight size="1.3rem" />
@@ -618,11 +624,13 @@ const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
                     </button>
                     <button
                       onClick={() => {
-                        setUiCust.sendButtonIcon("arrow3");
-                        setIsActive(!isActive);
+                        setUiCust((prevState) => ({
+                          ...prevState,
+                          sendButtonIcon: "arrow3",
+                        }));
                       }}
                     >
-                      {isActive ? (
+                      {setUiCust.sendButtonIcon === "arrow3" ? (
                         <IoIosArrowForward size="1.3rem" color="#00bfff" />
                       ) : (
                         <IoIosArrowForward size="1.3rem" />
@@ -630,11 +638,13 @@ const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
                     </button>
                     <button
                       onClick={() => {
-                        setUiCust.sendButtonIcon("arrow4");
-                        setIsActive(!isActive);
+                        setUiCust((prevState) => ({
+                          ...prevState,
+                          sendButtonIcon: "arrow4",
+                        }));
                       }}
                     >
-                      {isActive ? (
+                      {setUiCust.sendButtonIcon === "arrow4" ? (
                         <IoIosArrowDroprightCircle
                           size="1.3rem"
                           color="#00bfff"
@@ -645,11 +655,13 @@ const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
                     </button>
                     <button
                       onClick={() => {
-                        setUiCust.sendButtonIcon("arrow5");
-                        setIsActive(!isActive);
+                        setUiCust((prevState) => ({
+                          ...prevState,
+                          sendButtonIcon: "arrow5",
+                        }));
                       }}
                     >
-                      {isActive ? (
+                      {setUiCust.sendButtonIcon === "arrow5" ? (
                         <FaLocationArrow size="1.3rem" color="#00bfff" />
                       ) : (
                         <FaLocationArrow size="1.3rem" />
@@ -657,11 +669,13 @@ const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
                     </button>
                     <button
                       onClick={() => {
-                        setUiCust.sendButtonIcon("arrow6");
-                        setIsActive(!isActive);
+                        setUiCust((prevState) => ({
+                          ...prevState,
+                          sendButtonIcon: "arrow6",
+                        }));
                       }}
                     >
-                      {isActive ? (
+                      {setUiCust.sendButtonIcon === "arrow6" ? (
                         <TiArrowForward size="1.3rem" color="#00bfff" />
                       ) : (
                         <TiArrowForward size="1.3rem" />
@@ -669,14 +683,16 @@ const ChatbotCust = forwardRef(function ChatbotCust(props, ref) {
                     </button>
                     <button
                       onClick={() => {
-                        setUiCust.sendButtonIcon("arrow7");
-                        setIsActive(!isActive);
+                        setUiCust((prevState) => ({
+                          ...prevState,
+                          sendButtonIcon: "arrow7",
+                        }));
                       }}
                     >
-                      {isActive ? (
-                        <BiSolidMessageRounded size="1.3rem" />
-                      ) : (
+                      {setUiCust.sendButtonIcon === "arrow7" ? (
                         <BiSolidMessageRounded size="1.3rem" color="#00bfff" />
+                      ) : (
+                        <BiSolidMessageRounded size="1.3rem" />
                       )}
                     </button>
                   </nav>

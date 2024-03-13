@@ -30,7 +30,7 @@ function Home() {
       <DataExp />
       <Brands />
       <VisualData />
-      {/* <Testimonial /> */}
+      <Testimonial />
     </div>
   );
 }
