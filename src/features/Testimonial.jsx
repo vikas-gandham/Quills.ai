@@ -14,6 +14,28 @@ function Testimonial() {
     fetchTestimonials();
   }, []);
 
+  // async function getData() {
+  //   try {
+  //     const url1 =
+  //       "https://run.mocky.io/v3/b227de75-5842-4b71-80e2-c30f1c975c13";
+  //     const url2 =
+  //       "https://run.mocky.io/v3/b227de75-5842-4b71-80e2-c30f1c975c13";
+
+  //     const res = await Promise.all([fetch(url1), fetch(url2)]);
+
+  //     if (!res.ok)
+  //       throw new Error("Something went wrong");
+
+  //     const data1 = await responses[0].json();
+  //     const data2 = await responses[1].json();
+  //   } catch (error) {
+  //     if (error.name !== "AbortError") {
+  //       console.log(error.message);
+  //   }
+  // }
+
+  // getData();
+
   async function fetchTestimonials() {
     try {
       setIsLoading(true);

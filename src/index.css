@@ -19,3 +19,9 @@
     @apply text-[16px] font-normal  text-gray-600  group-hover:text-gray-100;
   }
 } */
+
+@layer components {
+  .error {
+    @apply text-red-500;
+  }
+}
