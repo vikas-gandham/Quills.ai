@@ -14,6 +14,16 @@ function Testimonial() {
     fetchTestimonials();
   }, []);
 
+  // function getData() {
+  //   Promise.all([
+  //     fetch("https://run.mocky.io/v3/b227de75-5842-4b71-80e2-c30f1c975c13"),
+  //     fetch("https://run.mocky.io/v3/b227de75-5842-4b71-80e2-c30f1c975c13"),
+  //   ])
+  //     .then((res) => Promise.all(res.map((r) => r.json)))
+  //     .then((dataJSON) => setTestimonials(dataJSON[0]));
+  // }
+  // getData();
+
   // async function getData() {
   //   try {
   //     const url1 =
@@ -23,14 +33,14 @@ function Testimonial() {
 
   //     const res = await Promise.all([fetch(url1), fetch(url2)]);
 
-  //     if (!res.ok)
-  //       throw new Error("Something went wrong");
+  //     if (!res.ok) throw new Error("Something went wrong");
 
-  //     const data1 = await responses[0].json();
-  //     const data2 = await responses[1].json();
+  //     const data = await Promise.all(res.map((r) => r.json));
+  //     setTestimonials(data[0]);
   //   } catch (error) {
   //     if (error.name !== "AbortError") {
   //       console.log(error.message);
+  //     }
   //   }
   // }
 

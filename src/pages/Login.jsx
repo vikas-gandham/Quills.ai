@@ -59,54 +59,15 @@ function Login() {
     }
     if (!values.confirmPassword) {
       errors.confirmPassword = "Password is required";
-    } else if (values.password.length < 4) {
+    } else if (values.confirmPassword.length < 4) {
       errors.confirmPassword = "Password must be more than 4 characters";
-    } else if (values.password.length > 10) {
+    } else if (values.confirmPassword.length > 10) {
       errors.confirmPassword = "Password cannot exceed more than 10 characters";
+    } else if (values.Password !== values.confirmPassword) {
+      errors.passwordNotMatching = "Password not matching";
     }
     return errors;
   };
-
-  function ShowHidePassword() {
-    return (
-      <div className="flex items-center justify-between ">
-        <input
-          type={!isVisible ? "password" : "text"}
-          className="border border-slate-400 rounded-sm p-2 grow  focus:outline-none focus:border-[#008b8b] "
-          name="password"
-          value={formValues.password}
-          placeholder="Enter your Password"
-          onChange={handleChange}
-        />
-        <span
-          className="border border-slate-400 rounded-sm px-4 py-3 hover:border-[#008b8b] cursor-pointer"
-          onClick={toggle}
-        >
-          {isVisible ? <IoEyeOutline /> : <IoEyeOffOutline />}
-        </span>
-      </div>
-    );
-  }
-  function ShowHideConfirmPassword() {
-    return (
-      <div className="flex items-center justify-between ">
-        <input
-          type={!isVisible ? "password" : "text"}
-          className="border border-slate-400 rounded-sm p-2 grow  focus:outline-none focus:border-[#008b8b] "
-          name="password"
-          value={formValues.confirmPassword}
-          placeholder="Enter your Password"
-          onChange={handleChange}
-        />
-        <span
-          className="border border-slate-400 rounded-sm px-4 py-3 hover:border-[#008b8b] cursor-pointer"
-          onClick={toggle}
-        >
-          {isVisible ? <IoEyeOutline /> : <IoEyeOffOutline />}
-        </span>
-      </div>
-    );
-  }
 
   return (
     <div className="   relative grid grid-cols-2 ">
@@ -163,23 +124,51 @@ function Login() {
           ) : null}
 
           <div className=" flex flex-col gap-4 ">
-            <form onSubmit={handleSubmit} className=" flex flex-col gap-4 ">
+            <form onSubmit={handleSubmit} className=" flex flex-col gap-6 ">
               <h1>Email</h1>
-              <input
-                type="text"
-                name="email"
-                value={formValues.email}
-                className="border border-slate-400 rounded-sm p-2 focus:outline-none focus:border-[#008b8b]"
-                placeholder="Enter your Email"
-                onChange={handleChange}
-              />
-              <p className="error">{formErrors.email}</p>
+              <div className="space-y-1 flex flex-col">
+                <input
+                  type="text"
+                  name="email"
+                  value={formValues.email}
+                  className={`border  rounded-sm p-2 grow  focus:outline-none focus:border-[#008b8b] ${
+                    formErrors.email ? `border-red-500` : `border-slate-400`
+                  } `}
+                  placeholder="Enter your Email"
+                  onChange={handleChange}
+                />
+                <p className="error">{formErrors.email}</p>
+              </div>
               {action === "signIn" ? (
                 <div className=" flex flex-col gap-4 ">
                   <h1>Password</h1>
-
-                  <ShowHidePassword />
-                  <p className="error">{formErrors.password}</p>
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between ">
+                      <input
+                        type={!isVisible ? "password" : "text"}
+                        className={`border  rounded-sm p-2 grow  focus:outline-none focus:border-[#008b8b] ${
+                          formErrors.password
+                            ? `border-red-500`
+                            : `border-slate-400`
+                        } `}
+                        name="password"
+                        value={formValues.password}
+                        placeholder="Enter your Password"
+                        onChange={handleChange}
+                      />
+                      <span
+                        className={`border  rounded-sm px-4 py-3 hover:border-[#008b8b] cursor-pointer ${
+                          formErrors.password
+                            ? `border-red-500`
+                            : `border-slate-400`
+                        }`}
+                        onClick={toggle}
+                      >
+                        {isVisible ? <IoEyeOutline /> : <IoEyeOffOutline />}
+                      </span>
+                    </div>
+                    <p className="error">{formErrors.password}</p>
+                  </div>
                   <button className="border p-2 text-white bg-[#008b8b]  focus:outline-none focus:border-[#008b8b]">
                     Sign In
                   </button>
@@ -187,14 +176,88 @@ function Login() {
               ) : (
                 <div className=" flex flex-col gap-4 ">
                   <h1>Password</h1>
-                  <ShowHidePassword />
-                  <p className="error">{formErrors.password}</p>
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between ">
+                      <input
+                        type={!isVisible ? "password" : "text"}
+                        className={`border  rounded-sm p-2 grow  focus:outline-none focus:border-[#008b8b] 
+                      ${
+                        formErrors.password
+                          ? `border-red-500`
+                          : `border-slate-400`
+                      }
+                      ${
+                        formErrors.passwordNotMatching
+                          ? `border-red-500`
+                          : `border-slate-400`
+                      }
+                       `}
+                        name="password"
+                        value={formValues.password}
+                        placeholder="Enter your Password"
+                        onChange={handleChange}
+                      />
+                      <span
+                        className={`border  rounded-sm px-4 py-3 hover:border-[#008b8b] cursor-pointer ${
+                          formErrors.password
+                            ? `border-red-500`
+                            : `border-slate-400`
+                        }
+                      ${
+                        formErrors.passwordNotMatching
+                          ? `border-red-500`
+                          : `border-slate-400`
+                      }`}
+                        onClick={toggle}
+                      >
+                        {isVisible ? <IoEyeOutline /> : <IoEyeOffOutline />}
+                      </span>
+                    </div>
+                    <p className="error">{formErrors.password}</p>
+                  </div>
                   <h1>Confirm Password</h1>
-                  <ShowHideConfirmPassword />
-                  <p className="error">{formErrors.confirmPassword}</p>
-                  {formValues.password !== formValues.confirmPassword ? (
-                    <p className="error">Password not matching</p>
-                  ) : null}
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between ">
+                      <input
+                        type={!isVisible ? "password" : "text"}
+                        className={`border  rounded-sm p-2 grow  focus:outline-none focus:border-[#008b8b] ${
+                          formErrors.confirmPassword
+                            ? `border-red-500`
+                            : `border-slate-400`
+                        }
+                      ${
+                        formErrors.passwordNotMatching
+                          ? `border-red-500`
+                          : `border-slate-400`
+                      }`}
+                        name="confirmPassword"
+                        value={formValues.confirmPassword}
+                        placeholder="Enter your Password"
+                        onChange={handleChange}
+                      />
+                      <span
+                        className={`border  rounded-sm px-4 py-3 hover:border-[#008b8b] cursor-pointer ${
+                          formErrors.confirmPassword
+                            ? `border-red-500`
+                            : `border-slate-400`
+                        }
+                      ${
+                        formErrors.passwordNotMatching
+                          ? `border-red-500`
+                          : `border-slate-400`
+                      }`}
+                        onClick={toggle}
+                      >
+                        {isVisible ? <IoEyeOutline /> : <IoEyeOffOutline />}
+                      </span>
+                    </div>
+                    {formErrors.passwordNotMatching ? (
+                      <p className="error">{formErrors.passwordNotMatching}</p>
+                    ) : (
+                      <p className="error">{formErrors.confirmPassword}</p>
+                    )}
+                  </div>
+
                   <button className="border p-2 text-white bg-[#008b8b]  focus:outline-none focus:border-[#008b8b]">
                     Create Account
                   </button>
