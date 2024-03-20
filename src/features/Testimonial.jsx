@@ -170,7 +170,7 @@ function Testimonial() {
                         rows="3"
                         value={data.blockquote}
                         onChange={(value) =>
-                          onChangeHandler(testimonials.h1, "blockquote", value)
+                          onChangeHandler(data.h1, "blockquote", value)
                         }
                       />
                     </blockquote>
@@ -180,7 +180,7 @@ function Testimonial() {
                           <input
                             value={data.h1}
                             onChange={(value) =>
-                              onChangeHandler(testimonials.h1, "h1", value)
+                              onChangeHandler(data.h1, "h1", value)
                             }
                           />
                         </h1>
@@ -188,7 +188,7 @@ function Testimonial() {
                           <input
                             value={data.p}
                             onChange={(value) =>
-                              onChangeHandler(testimonials.h1, "p", value)
+                              onChangeHandler(data.h1, "p", value)
                             }
                           />
                         </p>
@@ -207,13 +207,13 @@ function Testimonial() {
                     </figcaption>
                     <div className=" flex items-center justify-center gap-4 pt-16">
                       <button
-                        onClick={() => updateTestimonial(testimonials.h1)}
+                        onClick={() => updateTestimonial(data.h1)}
                         className="border px-4 py-3 rounded-lg shadow-md bg-blue-500 text-white"
                       >
                         UPDATE
                       </button>
                       <button
-                        onClick={() => deleteTestimonial(testimonials.h1)}
+                        onClick={() => deleteTestimonial(data.h1)}
                         className="border px-4 py-3 rounded-lg shadow-md bg-red-500 text-white"
                       >
                         DELETE
@@ -226,7 +226,7 @@ function Testimonial() {
           ))}
         </ul>
       )}
-      <div className=" space-y-8 p-16 flex items-center justify-center">
+      <div className="  p-16 flex items-center justify-center gap-6 ">
         <input
           placeholder="Add Name"
           value={newH1}
