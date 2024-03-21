@@ -8,6 +8,7 @@ import VisualData from "../features/VisualData";
 import { useEffect, useRef } from "react";
 import Testimonial from "../features/Testimonial";
 import Table from "../features/Table";
+import AntdTable from "../features/AntdTable";
 
 function Home() {
   const chatbotref = useRef(null);
@@ -33,6 +34,7 @@ function Home() {
       <VisualData />
       <Testimonial />
       <Table />
+      <AntdTable />
     </div>
   );
 }
