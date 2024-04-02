@@ -233,10 +233,10 @@ function Header() {
         <div className="text-base-8">
           {isHovering && hoverText()}
           <ul
-            className={`lg:flex lg:items-center gap-6 lg:text-black mx-auto py-3 bg-slate-600 lg:bg-white w-auto  lg:opacity-100 pl-8 text-white   ${
+            className={`lg:flex lg:items-center gap-6 lg:text-black mx-auto py-3 bg-slate-600 lg:bg-white w-auto  lg:opacity-100 pl-8 text-white inline-block  ${
               toggle
                 ? `opacity-100`
-                : `opacity-0 absolute transition-all lg:sticky  `
+                : `hidden absolute transition-all lg:sticky  `
             } `}
           >
             <li className="mx-4 my-6 lg:my-0">
@@ -252,7 +252,7 @@ function Header() {
 
             <li className="mx-4 my-6 lg:my-0">
               <Link
-                onClick={handleMouseOver}
+                onMouseOver={handleMouseOver}
                 className="flex items-center justify-start  gap-1"
               >
                 Solutions

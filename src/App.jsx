@@ -19,6 +19,7 @@ import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Industry from "./pages/Industry";
 import ScrollToTop from "./features/ScrollToTop";
+import Tables from "./pages/Tables";
 
 const router = createBrowserRouter([
   { path: "/login", element: <Login /> },
@@ -97,6 +98,10 @@ const router = createBrowserRouter([
       {
         path: "/privacy-policy",
         element: <PrivacyPolicy />,
+      },
+      {
+        path: "/tables",
+        element: <Tables />,
       },
     ],
   },
