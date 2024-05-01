@@ -248,6 +248,7 @@ function Testimonial() {
         >
           Add Testimonial
         </button>
+        <p>hi</p>
       </div>
     </>
   );
