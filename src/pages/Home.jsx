@@ -7,6 +7,7 @@ import Brands from "../features/Brands";
 import VisualData from "../features/VisualData";
 import { useEffect, useRef } from "react";
 import Testimonial from "../features/Testimonial";
+import Test from "../features/Test";
 
 function Home() {
   const chatbotref = useRef(null);
@@ -31,6 +32,7 @@ function Home() {
       <Brands />
       <VisualData />
       <Testimonial />
+      <Test />
     </div>
   );
 }
