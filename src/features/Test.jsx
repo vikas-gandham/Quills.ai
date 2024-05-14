@@ -23,6 +23,10 @@ function Test() {
   const sortRev = letters.sort((a, b) => (a > b ? -1 : 1));
   console.log(sortRev);
 
-  return <div></div>;
+  return (
+    <div>
+      <h1>Yo</h1>
+    </div>
+  );
 }
 export default Test;
